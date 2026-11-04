@@ -68,13 +68,22 @@ const collections = [
   },
 ]
 
+const FOOTER_LINKS = [
+  { label: 'About', href: '/bio' },
+  { label: 'Contact', href: '/contact' },
+  { label: 'Terms', href: '/terms' },
+  { label: 'Privacy', href: '/privacy' },
+  { label: 'Instagram', href: 'https://www.instagram.com/codyburridgestudio', external: true },
+  { label: 'Shop', href: 'https://www.codyburridge.com/shop', external: true },
+]
+
 export default function Home() {
   return (
     <main style={{
       minHeight: '100vh',
       background: '#111111',
       color: '#ffffff',
-      fontFamily: "\'Poppins\', system-ui, sans-serif",
+      fontFamily: "'Poppins', system-ui, sans-serif",
       fontWeight: 300,
       WebkitFontSmoothing: 'antialiased',
       display: 'flex',
@@ -84,13 +93,13 @@ export default function Home() {
       padding: '80px 24px',
     }}>
       {/* Logo */}
-      <a href="https://www.codyburridge.com" style={{ marginBottom: '80px', opacity: 0.9 }}>
+      <Link href="/" style={{ marginBottom: '80px', opacity: 0.9, display: 'block' }}>
         <img
           src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
           alt="Cody Burridge C.STUDIO"
-          style={{ height: '28px', width: 'auto', filter: 'invert(1)' }}
+          style={{ height: '28px', width: 'auto', filter: 'invert(1)', display: 'block' }}
         />
-      </a>
+      </Link>
 
       {/* Collections */}
       <div style={{ width: '100%', maxWidth: '640px' }}>
@@ -121,7 +130,7 @@ export default function Home() {
             >
               <div>
                 <p style={{
-                  fontFamily: "\'Jost\', sans-serif",
+                  fontFamily: "'Jost', sans-serif",
                   fontSize: 'clamp(22px, 4vw, 36px)',
                   fontWeight: 700,
                   letterSpacing: '-0.01em',
@@ -159,25 +168,33 @@ export default function Home() {
         marginTop: '80px',
         display: 'flex',
         gap: '28px',
+        flexWrap: 'wrap',
+        justifyContent: 'center',
       }}>
-        {[
-          { label: 'Shop', href: 'https://www.codyburridge.com/shop' },
-          { label: 'Instagram', href: 'https://www.instagram.com/codyburridge' },
-          { label: 'Contact', href: 'https://www.codyburridge.com/contact' },
-        ].map((link) => (
-          <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" style={{
-            color: 'rgba(255,255,255,0.25)',
-            textDecoration: 'none',
-            fontSize: '9px',
-            letterSpacing: '0.12em',
-            textTransform: 'uppercase',
-            transition: 'color 0.2s',
-          }}
-          onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.8)')}
-          onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.25)')}
-          >
-            {link.label}
-          </a>
+        {FOOTER_LINKS.map((link) => (
+          link.external
+            ? <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" style={{
+                color: 'rgba(255,255,255,0.25)',
+                textDecoration: 'none',
+                fontSize: '9px',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.8)')}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.25)')}
+            >{link.label}</a>
+            : <Link key={link.label} href={link.href} style={{
+                color: 'rgba(255,255,255,0.25)',
+                textDecoration: 'none',
+                fontSize: '9px',
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                transition: 'color 0.2s',
+              }}
+              onMouseEnter={(e) => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.8)')}
+              onMouseLeave={(e) => ((e.target as HTMLElement).style.color = 'rgba(255,255,255,0.25)')}
+            >{link.label}</Link>
         ))}
       </div>
     </main>
