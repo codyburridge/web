@@ -1,0 +1,17 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --black: #111111;
+  --white: #ffffff;
+  --off-white: #f8f7f5;
+  --grey: #888;
+  --border: #e0ddd8;
+}
