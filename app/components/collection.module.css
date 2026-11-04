@@ -1,0 +1,389 @@
+/* ── HEADER ── */
+.header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  height: 58px;
+  border-bottom: 1px solid transparent;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: border-color 0.4s;
+}
+.headerScrolled { border-color: #e0ddd8; }
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 101;
+}
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: #111111;
+  transition: transform 0.3s, opacity 0.3s;
+}
+.hamburgerOpen span:nth-child(1) { transform: rotate(45deg) translate(4.2px, 4.2px); }
+.hamburgerOpen span:nth-child(2) { opacity: 0; }
+.hamburgerOpen span:nth-child(3) { transform: rotate(-45deg) translate(4.2px, -4.2px); }
+.headerLogo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 0;
+}
+.headerLogo img { height: 22px; width: auto; }
+.shopBtn {
+  color: #111111;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.shopBtn:hover { opacity: 0.45; }
+
+/* ── MOBILE NAV ── */
+.navOverlay {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 99;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+.navOverlayOpen { opacity: 1; pointer-events: all; }
+.navOverlay a {
+  color: #111111;
+  text-decoration: none;
+  font-family: 'Jost', sans-serif;
+  font-size: 26px;
+  font-weight: 200;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: opacity 0.2s;
+}
+.navOverlay a:hover { opacity: 0.35; }
+
+/* ── HERO ── */
+.hero {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 120px 24px 80px;
+  position: relative;
+  overflow: hidden;
+  background: #ffffff;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center 30%;
+  opacity: 0.18;
+}
+.heroContent { position: relative; z-index: 1; }
+.heroEyebrow {
+  font-size: 9px;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 24px;
+}
+.hero h1 {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(44px, 8vw, 96px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 0.92;
+  margin-bottom: 30px;
+  color: #111111;
+  text-transform: uppercase;
+}
+.heroSub {
+  font-size: 13px;
+  line-height: 1.75;
+  color: #888;
+  max-width: 360px;
+  margin: 0 auto 44px;
+  letter-spacing: 0.01em;
+}
+.heroCta {
+  display: inline-block;
+  background: #111111;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 10px;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  transition: opacity 0.2s;
+}
+.heroCta:hover { opacity: 0.75; }
+.heroJoin {
+  display: block;
+  margin-top: 20px;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #888;
+  transition: opacity 0.2s;
+}
+.heroJoin:hover { opacity: 0.55; }
+.scrollHint {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  animation: bob 2.4s ease-in-out infinite;
+}
+@keyframes bob {
+  0%, 100% { opacity: 0.25; transform: translateX(-50%) translateY(0); }
+  50% { opacity: 0.55; transform: translateX(-50%) translateY(-5px); }
+}
+
+/* ── GALLERY ── */
+.gallerySection {
+  padding: 60px 0 80px;
+  background: #f8f7f5;
+  border-top: 1px solid #e0ddd8;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+.galleryHeader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  padding: 0 32px 40px;
+}
+.galleryLabel {
+  font-family: 'Jost', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #111111;
+}
+.galleryCount {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: #888;
+  font-style: italic;
+}
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 0 20px;
+}
+@media (min-width: 700px) {
+  .galleryGrid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1000px) {
+  .galleryGrid { grid-template-columns: repeat(3, 1fr); }
+}
+.galleryItem {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f8f7f5;
+  aspect-ratio: 1 / 1;
+}
+.galleryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s, transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.imgLoaded { opacity: 1 !important; }
+.galleryItem:hover img { transform: scale(1.04); }
+.galleryCaption {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 48px 18px 16px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.55));
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.galleryItem:hover .galleryCaption { opacity: 1; }
+
+/* ── SIGNUP ── */
+.signupSection {
+  padding: 100px 24px;
+  text-align: center;
+  border-top: 1px solid #e0ddd8;
+  background: #ffffff;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+.signupEyebrow {
+  font-size: 9px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 18px;
+}
+.signupSection h2 {
+  font-family: 'Jost', sans-serif;
+  font-size: clamp(32px, 6vw, 72px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  line-height: 1;
+  color: #111111;
+}
+.signupSub {
+  font-size: 12px;
+  color: #888;
+  max-width: 320px;
+  margin: 0 auto 48px;
+  line-height: 1.8;
+}
+.signupForm {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 360px;
+  margin: 0 auto;
+  position: relative;
+}
+.signupForm input[type="text"],
+.signupForm input[type="email"] {
+  background: #f8f7f5;
+  border: 1px solid #e0ddd8;
+  color: #111111;
+  padding: 14px 16px;
+  font-size: 12px;
+  font-family: inherit;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  transition: border-color 0.25s;
+}
+.signupForm input::placeholder { color: #888; }
+.signupForm input:focus { border-color: #111111; }
+.signupForm button {
+  background: #111111;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: inherit;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+}
+.signupForm button:hover { opacity: 0.75; }
+.signupNote {
+  margin-top: 16px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  color: rgba(0,0,0,0.2);
+}
+
+/* ── FOOTER ── */
+.footer {
+  padding: 28px 24px;
+  border-top: 1px solid #e0ddd8;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #f8f7f5;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+.footerLogo img { height: 18px; width: auto; opacity: 0.2; }
+.footerLinks {
+  display: flex;
+  gap: 24px;
+}
+.footerLinks a {
+  color: rgba(0,0,0,0.3);
+  text-decoration: none;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+}
+.footerLinks a:hover { color: #111111; }
+
+/* ── LIGHTBOX ── */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.97);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.lightbox img {
+  max-width: 92vw;
+  max-height: 90svh;
+  object-fit: contain;
+  cursor: default;
+}
+.lightboxClose {
+  position: absolute;
+  top: 20px; right: 24px;
+  background: none;
+  border: none;
+  color: #111111;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+  line-height: 1;
+  font-weight: 200;
+}
+.lightboxClose:hover { opacity: 1; }
+.lightboxCaption {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #888;
+  white-space: nowrap;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
