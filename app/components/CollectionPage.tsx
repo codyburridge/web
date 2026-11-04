@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import styles from './collection.module.css'
 
 const BASE = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/'
@@ -82,20 +83,20 @@ export default function CollectionPage({
         >
           <span /><span /><span />
         </button>
-        <a className={styles.headerLogo} href="https://www.codyburridge.com">
+        <Link className={styles.headerLogo} href="/">
           <img
             src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
             alt="Cody Burridge C.STUDIO"
           />
-        </a>
+        </Link>
         <a className={styles.shopBtn} href="https://www.codyburridge.com/shop" target="_blank" rel="noopener">Shop</a>
       </header>
 
       <nav className={`${styles.navOverlay} ${navOpen ? styles.navOverlayOpen : ''}`} aria-hidden={!navOpen}>
         <a href="https://www.codyburridge.com/shop" target="_blank" rel="noopener" onClick={() => setNavOpen(false)}>Shop Prints</a>
-        <a href="https://www.codyburridge.com/collections" onClick={() => setNavOpen(false)}>Collections</a>
-        <a href="https://www.codyburridge.com/bio" onClick={() => setNavOpen(false)}>About</a>
-        <a href="https://www.codyburridge.com/contact" onClick={() => setNavOpen(false)}>Contact</a>
+        <Link href="/" onClick={() => setNavOpen(false)}>Collections</Link>
+        <Link href="/bio" onClick={() => setNavOpen(false)}>About</Link>
+        <Link href="/contact" onClick={() => setNavOpen(false)}>Contact</Link>
         <a href="#signup" onClick={() => setNavOpen(false)}>Join Preview List</a>
       </nav>
 
@@ -168,17 +169,20 @@ export default function CollectionPage({
       </section>
 
       <footer className={styles.footer}>
-        <a className={styles.footerLogo} href="https://www.codyburridge.com">
+        <Link className={styles.footerLogo} href="/">
           <img
             src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=200w"
             alt="Cody Burridge"
           />
-        </a>
+        </Link>
         <div className={styles.footerLinks}>
+          <Link href="/">Collections</Link>
+          <Link href="/bio">About</Link>
+          <Link href="/contact">Contact</Link>
+          <Link href="/terms">Terms</Link>
+          <Link href="/privacy">Privacy</Link>
+          <a href="https://www.instagram.com/codyburridgestudio" target="_blank" rel="noopener">Instagram</a>
           <a href="https://www.codyburridge.com/shop" target="_blank" rel="noopener">Shop</a>
-          <a href="https://www.codyburridge.com/collections" target="_blank" rel="noopener">Collections</a>
-          <a href="https://www.codyburridge.com/contact" target="_blank" rel="noopener">Contact</a>
-          <a href="https://www.instagram.com/codyburridge" target="_blank" rel="noopener">Instagram</a>
         </div>
         <p style={{ fontSize: '9px', color: 'rgba(0,0,0,0.2)', letterSpacing: '0.06em' }}>
           © 2026 Cody Burridge. All rights reserved.
