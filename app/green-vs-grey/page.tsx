@@ -1,0 +1,25 @@
+import CollectionPage from '../components/CollectionPage'
+
+const artworks = [
+  { file: '1738850753650-OXJ53JQ3WVX8P1EGZGA2/S0400001.jpg', title: 'S0400001' },
+  { file: '1738850755949-I8D5LBKVB4EN5J0XLR4C/S0400016.jpg', title: 'S0400016' },
+  { file: '1738850757791-KPT4RPH1HMV0VJCO8R6I/S0400003.jpg', title: 'S0400003' },
+  { file: '1738850760122-8W12M2M6Y0SNP8IK37RN/IMG_9974.jpg', title: 'IMG 9974' },
+  { file: '1738850762517-XTE3GH4GY7T07FXI9L7F/S0400033.jpg', title: 'S0400033' },
+  { file: '1738850765000-NW5FYDD1TRFFVURC28LC/S0400036.jpg', title: 'S0400036' },
+  { file: '1738850767549-BGGKSREDA6KUP8G7LYIN/S0400034.jpg', title: 'S0400034' },
+  { file: '1738850770215-ON76ESO4KW0QMY9JAPFO/S0400014.jpg', title: 'S0400014' },
+]
+
+export default function GreenVsGrey() {
+  return (
+    <CollectionPage
+      title="Green vs Grey"
+      year="2025"
+      pieces={8}
+      description="Nature forcing its way through concrete — the quiet, persistent war between the organic and the built."
+      artworks={artworks}
+      heroBgFile="1738850753650-OXJ53JQ3WVX8P1EGZGA2/S0400001.jpg"
+    />
+  )
+}
