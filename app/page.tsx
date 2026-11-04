@@ -10,6 +10,62 @@ const collections = [
     pieces: 12,
     description: 'Fine art from the floor of the world\'s greatest conventions.',
   },
+  {
+    slug: 'a-different-view',
+    title: 'A Different View',
+    year: '2025',
+    pieces: 6,
+    description: 'Intimate scenes caught in the quiet between moments — light, colour, and stillness.',
+  },
+  {
+    slug: 'the-magic-hour',
+    title: 'The Magic Hour',
+    year: '2025',
+    pieces: 12,
+    description: 'Streets, faces and architecture caught in the last gold of the day.',
+  },
+  {
+    slug: 'green-vs-grey',
+    title: 'Green vs Grey',
+    year: '2025',
+    pieces: 8,
+    description: 'Nature forcing its way through concrete — the quiet war between organic and built.',
+  },
+  {
+    slug: 'in-time-we-rust',
+    title: 'In Time We Rust',
+    year: '2025',
+    pieces: 8,
+    description: 'Decay as beauty — industrial relics and forgotten steel at the edge of collapse.',
+  },
+  {
+    slug: 'neon-numbers',
+    title: 'Neon Numbers',
+    year: '2025',
+    pieces: 6,
+    description: 'Electric signage and the language of light — numerals illuminated against the dark city.',
+  },
+  {
+    slug: 'end-of-an-easel',
+    title: 'End of an Easel',
+    year: '2025',
+    pieces: 8,
+    description: 'Fine art photographed inside the gallery — where the work meets the wall.',
+  },
+  {
+    slug: 'reminiscence',
+    title: 'Reminiscence',
+    year: '2025',
+    pieces: 2,
+    description: 'A meditation on memory, identity and the passage of time.',
+  },
+  {
+    slug: 'book',
+    title: 'A Different View — The Book',
+    year: '2026',
+    pieces: 8,
+    description: 'The collector edition — Vol. I in print. Limited run, signed and numbered.',
+  },
 ]
 
 export default function Home() {
@@ -18,7 +74,7 @@ export default function Home() {
       minHeight: '100vh',
       background: '#111111',
       color: '#ffffff',
-      fontFamily: "'Poppins', system-ui, sans-serif",
+      fontFamily: "\'Poppins\', system-ui, sans-serif",
       fontWeight: 300,
       WebkitFontSmoothing: 'antialiased',
       display: 'flex',
@@ -65,7 +121,7 @@ export default function Home() {
             >
               <div>
                 <p style={{
-                  fontFamily: "'Jost', sans-serif",
+                  fontFamily: "\'Jost\', sans-serif",
                   fontSize: 'clamp(22px, 4vw, 36px)',
                   fontWeight: 700,
                   letterSpacing: '-0.01em',
