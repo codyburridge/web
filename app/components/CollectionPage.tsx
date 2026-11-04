@@ -1,0 +1,197 @@
+'use client'
+
+import { useState, useEffect } from 'react'
+import styles from './collection.module.css'
+
+const BASE = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/'
+
+export interface Artwork {
+  file: string
+  title: string
+  objPos?: string
+}
+
+interface CollectionPageProps {
+  title: string
+  year: string
+  pieces: number
+  description: string
+  artworks: Artwork[]
+  heroBgFile?: string
+}
+
+export default function CollectionPage({
+  title,
+  year,
+  pieces,
+  description,
+  artworks,
+  heroBgFile,
+}: CollectionPageProps) {
+  const [navOpen, setNavOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const [lightbox, setLightbox] = useState<{ src: string; title: string } | null>(null)
+  const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    if (lightbox) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+    return () => { document.body.style.overflow = '' }
+  }, [lightbox])
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightbox(null)
+    }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [])
+
+  const handleImageLoad = (index: number) => {
+    setLoadedImages(prev => new Set(prev).add(index))
+  }
+
+  const openLightbox = (art: Artwork) => {
+    setLightbox({ src: `${BASE}${art.file}?format=1200w`, title: art.title })
+  }
+
+  const bgFile = heroBgFile ?? artworks[0]?.file
+  const bgUrl = bgFile ? `${BASE}${bgFile}?format=1200w` : ''
+
+  const titleWords = title.split(' ')
+  const titleDisplay = titleWords.length >= 3
+    ? <>{titleWords.slice(0, Math.ceil(titleWords.length / 2)).join(' ')}<br />{titleWords.slice(Math.ceil(titleWords.length / 2)).join(' ')}</>
+    : <>{title}</>
+
+  return (
+    <>
+      <header className={`${styles.header} ${scrolled ? styles.headerScrolled : ''}`}>
+        <button
+          className={`${styles.hamburger} ${navOpen ? styles.hamburgerOpen : ''}`}
+          onClick={() => setNavOpen(!navOpen)}
+          aria-label="Open menu"
+        >
+          <span /><span /><span />
+        </button>
+        <a className={styles.headerLogo} href="https://www.codyburridge.com">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
+            alt="Cody Burridge C.STUDIO"
+          />
+        </a>
+        <a className={styles.shopBtn} href="https://www.codyburridge.com/shop" target="_blank" rel="noopener">Shop</a>
+      </header>
+
+      <nav className={`${styles.navOverlay} ${navOpen ? styles.navOverlayOpen : ''}`} aria-hidden={!navOpen}>
+        <a href="https://www.codyburridge.com/shop" target="_blank" rel="noopener" onClick={() => setNavOpen(false)}>Shop Prints</a>
+        <a href="https://www.codyburridge.com/collections" onClick={() => setNavOpen(false)}>Collections</a>
+        <a href="https://www.codyburridge.com/bio" onClick={() => setNavOpen(false)}>About</a>
+        <a href="https://www.codyburridge.com/contact" onClick={() => setNavOpen(false)}>Contact</a>
+        <a href="#signup" onClick={() => setNavOpen(false)}>Join Preview List</a>
+      </nav>
+
+      <section className={styles.hero}>
+        {bgUrl && (
+          <div
+            className={styles.heroBg}
+            aria-hidden="true"
+            style={{ backgroundImage: `url('${bgUrl}')` }}
+          />
+        )}
+        <div className={styles.heroContent}>
+          <p className={styles.heroEyebrow}>Fine Art Photography · Limited Editions</p>
+          <h1>{titleDisplay}</h1>
+          <p className={styles.heroSub}>{description}</p>
+          <a className={styles.heroCta} href="#gallery">View the Series</a>
+          <a className={styles.heroJoin} href="#signup">Join the Preview List</a>
+        </div>
+        <p className={styles.scrollHint} aria-hidden="true">↓&nbsp;&nbsp;Scroll</p>
+      </section>
+
+      <section className={styles.gallerySection} id="gallery">
+        <div className={styles.galleryHeader}>
+          <span className={styles.galleryLabel}>The Works</span>
+          <span className={styles.galleryCount}>{pieces} Pieces · Limited Editions</span>
+        </div>
+        <div className={styles.galleryGrid}>
+          {artworks.map((art, i) => (
+            <div
+              key={art.file}
+              className={styles.galleryItem}
+              onClick={() => openLightbox(art)}
+            >
+              <img
+                src={`${BASE}${art.file}?format=800w`}
+                alt={art.title}
+                loading="lazy"
+                decoding="async"
+                className={loadedImages.has(i) ? styles.imgLoaded : ''}
+                style={art.objPos ? { objectPosition: art.objPos } : undefined}
+                onLoad={() => handleImageLoad(i)}
+              />
+              {art.title && <div className={styles.galleryCaption}>{art.title}</div>}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.signupSection} id="signup">
+        <p className={styles.signupEyebrow}>Collector Access</p>
+        <h2>Join the<br />Preview List</h2>
+        <p className={styles.signupSub}>
+          First access to new works, collector editions and releases — before they go public.
+        </p>
+        <form
+          className={styles.signupForm}
+          action="https://codyburridge.us1.list-manage.com/subscribe/post?u=de5025904fc1d6605d1c621b1&id=1283185285&f_id=00577fe1f0"
+          method="post"
+          target="_blank"
+          noValidate
+        >
+          <input type="text" name="FNAME" placeholder="First name" autoComplete="given-name" />
+          <input type="email" name="EMAIL" placeholder="Email address" required autoComplete="email" />
+          <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
+            <input type="text" name="b_de5025904fc1d6605d1c621b1_1283185285" tabIndex={-1} defaultValue="" />
+          </div>
+          <button type="submit">Join the List</button>
+        </form>
+        <p className={styles.signupNote}>No spam. Unsubscribe at any time.</p>
+      </section>
+
+      <footer className={styles.footer}>
+        <a className={styles.footerLogo} href="https://www.codyburridge.com">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=200w"
+            alt="Cody Burridge"
+          />
+        </a>
+        <div className={styles.footerLinks}>
+          <a href="https://www.codyburridge.com/shop" target="_blank" rel="noopener">Shop</a>
+          <a href="https://www.codyburridge.com/collections" target="_blank" rel="noopener">Collections</a>
+          <a href="https://www.codyburridge.com/contact" target="_blank" rel="noopener">Contact</a>
+          <a href="https://www.instagram.com/codyburridge" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <p style={{ fontSize: '9px', color: 'rgba(0,0,0,0.2)', letterSpacing: '0.06em' }}>
+          © 2026 Cody Burridge. All rights reserved.
+        </p>
+      </footer>
+
+      {lightbox && (
+        <div className={styles.lightbox} onClick={() => setLightbox(null)}>
+          <button className={styles.lightboxClose} onClick={() => setLightbox(null)} aria-label="Close">✕</button>
+          <img src={lightbox.src} alt={lightbox.title} onClick={(e) => e.stopPropagation()} />
+          <p className={styles.lightboxCaption}>{lightbox.title}</p>
+        </div>
+      )}
+    </>
+  )
+}
