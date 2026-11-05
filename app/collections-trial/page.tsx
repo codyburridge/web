@@ -134,7 +134,7 @@ export default function CollectionsTrial() {
                   fontFamily: "'Jost', sans-serif",
                   fontSize: 'clamp(22px, 4vw, 36px)',
                   fontWeight: 700,
-                  letterSpacing: '-0.05em',
+                  letterSpacing: '-0.07em',
                   textTransform: 'uppercase',
                   color: '#ffffff',
                   marginBottom: '6px',
