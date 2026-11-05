@@ -17,7 +17,7 @@ export default function EndOfAnEasel() {
       title="End of an Easel"
       year="2025"
       pieces={8}
-      description="Fine art photographed inside the gallery — where the work meets the wall and the room becomes part of the image."
+      description="Portraits of a colourist, found in the magnified traces of my father's easel."
       artworks={artworks}
       heroBgFile="1740148196507-SABHVD2G8YYG9PYRW4VR/99projects_CodyBurridge_Exhibition2_001.jpg"
     />
