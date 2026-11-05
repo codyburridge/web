@@ -31,14 +31,16 @@ export default function Intro() {
       />
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0) 30%, rgba(0,0,0,0) 65%, rgba(0,0,0,0.35) 100%)' }} />
 
-      <img
-        src={LOGO}
-        alt="Cody Burridge"
-        style={{ position: 'absolute', top: '28px', left: '50%', transform: 'translateX(-50%)', height: '32px', width: 'auto', filter: 'invert(1)' }}
-      />
+      <Link href="/collections" aria-label="Collections" style={{ position: 'absolute', top: '28px', left: '50%', transform: 'translateX(-50%)', lineHeight: 0 }}>
+        <img
+          src={LOGO}
+          alt="Cody Burridge"
+          style={{ height: '32px', width: 'auto', filter: 'invert(1)', display: 'block' }}
+        />
+      </Link>
 
       <Link
-        href="/"
+        href="/collections"
         style={{
           position: 'absolute',
           left: '50%',
