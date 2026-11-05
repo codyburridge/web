@@ -8,7 +8,7 @@ const LOGO = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f3
 const SHOP = 'https://qnjaf1-se.myshopify.com'
 
 const NAV_LINKS = [
-  { label: 'Collections', href: '/' },
+  { label: 'Collections', href: '/collections' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
   { label: 'Shop', href: SHOP, external: true },
@@ -73,7 +73,7 @@ export default function ExhibitionPage() {
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none',
         transition: 'all 0.3s',
       }}>
-        <Link href="/">
+        <Link href="/collections">
           <img src={LOGO} alt="C.STUDIO" style={{ height: '32px', filter: 'invert(1)', opacity: 0.9, display: 'block' }} />
         </Link>
         <nav style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
@@ -140,7 +140,7 @@ export default function ExhibitionPage() {
       </main>
 
       <footer style={s.footer}>
-        <Link href="/">
+        <Link href="/collections">
           <img src={LOGO} alt="Cody Burridge" style={{ height: '18px', filter: 'invert(1)', opacity: 0.4, display: 'block' }} />
         </Link>
         <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
