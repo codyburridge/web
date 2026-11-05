@@ -17,7 +17,7 @@ export default function InTimeWeRust() {
       title="In Time We Rust"
       year="2025"
       pieces={8}
-      description="Decay as beauty — industrial relics and forgotten steel photographed at the edge of collapse."
+      description="Layers of paint and iron, eroded and repainted over time, where decay becomes abstract beauty."
       artworks={artworks}
     />
   )
