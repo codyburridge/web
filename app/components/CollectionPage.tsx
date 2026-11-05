@@ -146,7 +146,7 @@ export default function CollectionPage({
             >
               <img
                 src={`${BASE}${art.file}?format=800w`}
-                alt={art.title}
+                alt={`${art.title}, from ${title} by Cody Burridge, fine art photograph`}
                 loading="lazy"
                 decoding="async"
                 className={loadedImages.has(i) ? styles.imgLoaded : ''}
@@ -171,6 +171,10 @@ export default function CollectionPage({
           method="post"
           target="_blank"
           noValidate
+          onSubmit={() => {
+            ;(window as any).fbq?.('track', 'Lead', { content_name: 'Preview list' })
+            ;(window as any).clarity?.('event', 'preview_list_signup')
+          }}
         >
           <input type="text" name="FNAME" placeholder="First name" autoComplete="given-name" />
           <input type="email" name="EMAIL" placeholder="Email address" required autoComplete="email" />
@@ -203,6 +207,24 @@ export default function CollectionPage({
           © 2026 Cody Burridge. All rights reserved.
         </p>
       </footer>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'ImageGallery',
+          name: `${title} by Cody Burridge`,
+          description,
+          author: { '@type': 'Person', name: 'Cody Burridge' },
+          image: artworks.map(art => ({
+            '@type': 'ImageObject',
+            contentUrl: `${BASE}${art.file}?format=1500w`,
+            name: art.title,
+            caption: `${art.title}, ${title}, Cody Burridge`,
+            creator: { '@type': 'Person', name: 'Cody Burridge' },
+          })),
+        }) }}
+      />
 
       {lightbox && (
         <div className={styles.lightbox} onClick={() => setLightbox(null)} role="dialog" aria-label={lightbox.art.title}>
