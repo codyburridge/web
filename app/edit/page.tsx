@@ -38,7 +38,7 @@ export default function EditPage() {
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: 'rgba(255,255,255,0.96)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
       }}>
-        <Link href="/" aria-label="Collections"><img src={LOGO} alt="Cody Burridge" style={{ height: '32px', width: 'auto', display: 'block' }} /></Link>
+        <Link href="/collections" aria-label="Collections"><img src={LOGO} alt="Cody Burridge" style={{ height: '32px', width: 'auto', display: 'block' }} /></Link>
       </header>
 
       <main style={{ maxWidth: '1240px', margin: '0 auto', padding: '56px 24px 96px' }}>
@@ -68,7 +68,7 @@ export default function EditPage() {
 
       <footer style={{ padding: '40px 24px 56px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
         <StarLink />
-        <Link href="/" style={{ fontSize: '9px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#888', textDecoration: 'none' }}>Collections</Link>
+        <Link href="/collections" style={{ fontSize: '9px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#888', textDecoration: 'none' }}>Collections</Link>
       </footer>
     </div>
   )
