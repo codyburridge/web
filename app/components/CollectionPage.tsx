@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './collection.module.css'
+import StarLink from './StarLink'
 
 const BASE = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/'
 
@@ -197,6 +198,7 @@ export default function CollectionPage({
           <a href="https://www.instagram.com/codyburridgestudio" target="_blank" rel="noopener">Instagram</a>
           <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener">Shop</a>
         </div>
+        <StarLink />
         <p style={{ fontSize: '9px', color: 'rgba(0,0,0,0.2)', letterSpacing: '0.06em' }}>
           © 2026 Cody Burridge. All rights reserved.
         </p>
