@@ -17,7 +17,7 @@ export default function GreenVsGrey() {
       title="Green vs Grey"
       year="2025"
       pieces={8}
-      description="Nature forcing its way through concrete — the quiet, persistent war between the organic and the built."
+      description="A study in light and structure, abstracting Tokyo's architecture."
       artworks={artworks}
     />
   )
