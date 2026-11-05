@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import StarLink from './components/StarLink'
 
 const collections = [
   {
@@ -58,6 +59,13 @@ const collections = [
     year: 'Ongoing',
     pieces: 2,
     description: 'A meditation on memory, identity and the passage of time.',
+  },
+  {
+    slug: 'psychedelic',
+    title: 'Psychedelic',
+    year: 'Ongoing',
+    pieces: 4,
+    description: 'Influenced by screen print and pop aesthetics, each piece becomes more immediate, more stylised.',
   },
   {
     slug: 'book',
@@ -241,6 +249,7 @@ export default function Home() {
             >{link.label}</Link>
         ))}
       </div>
+      <div style={{ marginTop: '40px' }}><StarLink dark /></div>
     </main>
   )
 }
