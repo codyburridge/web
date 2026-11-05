@@ -41,15 +41,15 @@
   transform: translateX(-50%);
   line-height: 0;
 }
-.headerLogo img { height: 22px; width: auto; }
+.headerLogo img { height: 24px; width: auto; }
 .shopBtn {
   color: #111111;
   text-decoration: none;
-  font-size: 10px;
-  font-weight: 400;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  line-height: 0;
 }
+.shopBtn svg { width: 20px; height: 20px; display: block; }
 .shopBtn:hover { opacity: 0.45; }
 
 /* ── MOBILE NAV ── */
@@ -74,7 +74,7 @@
   text-decoration: none;
   font-family: 'Jost', sans-serif;
   font-size: 26px;
-  font-weight: 200;
+  font-weight: 400;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   transition: opacity 0.2s;
