@@ -161,6 +161,48 @@ export default function CollectionsTrial() {
           </Link>
         ))}
 
+        <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener" style={{ textDecoration: 'none' }}>
+          <div style={{
+            borderTop: '1px solid rgba(255,255,255,0.1)',
+            padding: '28px 0',
+            display: 'flex',
+            alignItems: 'baseline',
+            justifyContent: 'space-between',
+            gap: '24px',
+            cursor: 'pointer',
+            transition: 'opacity 0.2s',
+          }}
+          onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.6')}
+          onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
+          >
+            <div>
+              <p style={{
+                fontFamily: "'Jost', sans-serif",
+                fontSize: 'clamp(22px, 4vw, 36px)',
+                fontWeight: 700,
+                letterSpacing: '-0.07em',
+                textTransform: 'uppercase',
+                color: '#ffffff',
+                marginBottom: '6px',
+              }}>
+                C STUDiO
+              </p>
+              <p style={{
+                fontSize: '11px',
+                color: 'rgba(255,255,255,0.35)',
+                letterSpacing: '0.04em',
+              }}>
+                Prints of Cody Burridge&apos;s work, available for sale.
+              </p>
+            </div>
+            <div style={{ textAlign: 'right', flexShrink: 0 }}>
+              <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase' }}>
+                Shop ↗
+              </p>
+            </div>
+          </div>
+        </a>
+
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }} />
       </div>
 
