@@ -14,7 +14,6 @@ const NAV_LINKS = [
 ]
 
 const FOOTER_LINKS = [
-  { label: 'Collections', href: '/' },
   { label: 'Exhibition', href: '/exhibition' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
