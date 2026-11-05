@@ -92,7 +92,7 @@ export default function CollectionPage({
         >
           <span /><span /><span />
         </button>
-        <Link className={styles.headerLogo} href="/">
+        <Link className={styles.headerLogo} href="/collections">
           <img
             src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
             alt="Cody Burridge C.STUDIO"
@@ -107,7 +107,7 @@ export default function CollectionPage({
       </header>
 
       <nav className={`${styles.navOverlay} ${navOpen ? styles.navOverlayOpen : ''}`} aria-hidden={!navOpen}>
-        <Link href="/" onClick={() => setNavOpen(false)}>Collections</Link>
+        <Link href="/collections" onClick={() => setNavOpen(false)}>Collections</Link>
         <Link href="/bio" onClick={() => setNavOpen(false)}>About</Link>
         <Link href="/contact" onClick={() => setNavOpen(false)}>Contact</Link>
         <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener" onClick={() => setNavOpen(false)}>Shop</a>
@@ -183,7 +183,7 @@ export default function CollectionPage({
       </section>
 
       <footer className={styles.footer}>
-        <Link className={styles.footerLogo} href="/">
+        <Link className={styles.footerLogo} href="/collections">
           <img
             src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=200w"
             alt="Cody Burridge"
