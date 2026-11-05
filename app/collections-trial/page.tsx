@@ -20,7 +20,7 @@ const collections = [
   {
     slug: 'the-magic-hour',
     title: 'The Magic Hour',
-    year: '2023',
+    year: '2022',
     pieces: 12,
     description: 'Streets, faces and architecture caught in the last gold of the day.',
   },
@@ -34,21 +34,21 @@ const collections = [
   {
     slug: 'in-time-we-rust',
     title: 'In Time We Rust',
-    year: '2024',
+    year: '2022',
     pieces: 8,
     description: 'Decay as beauty — industrial relics and forgotten steel at the edge of collapse.',
   },
   {
     slug: 'neon-numbers',
     title: 'Neon Numbers',
-    year: '2024',
+    year: '2023',
     pieces: 6,
     description: 'Electric signage and the language of light — numerals illuminated against the dark city.',
   },
   {
     slug: 'end-of-an-easel',
     title: 'End of an Easel',
-    year: '2024',
+    year: '2022',
     pieces: 8,
     description: 'Fine art photographed inside the gallery — where the work meets the wall.',
   },
