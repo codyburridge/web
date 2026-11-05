@@ -1,9 +1,47 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Analytics from './components/Analytics'
+import { SITE_LIVE, SITE_URL, SITE_NAME, IMG } from './site'
+
+const DESCRIPTION = 'Cody Burridge is a British fine art photographer. Limited edition series including The Convention, A Different View, The Magic Hour and Psychedelic, with prints from C STUDiO.'
+const SHARE_IMAGE = `${IMG}72b110b9-f74f-4de9-8a9e-ee7a7ef480b2/Fag+Break+FIN+FLAT+copy.jpg?format=1200w`
 
 export const metadata: Metadata = {
-  title: 'Cody Burridge — Codachrome Studio',
-  description: 'Fine art photography. Limited edition prints.',
+  metadataBase: new URL(SITE_URL),
+  title: { default: 'Cody Burridge | C STUDiO', template: '%s | Cody Burridge' },
+  description: DESCRIPTION,
+  applicationName: SITE_NAME,
+  authors: [{ name: 'Cody Burridge' }],
+  keywords: ['Cody Burridge', 'C STUDiO', 'fine art photography', 'British photographer', 'limited edition prints', 'The Convention', 'comic con photography', 'A Different View', 'The Magic Hour', 'Psychedelic Trellick', 'art prints London'],
+  alternates: { canonical: '/' },
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    siteName: SITE_NAME,
+    title: 'Cody Burridge | C STUDiO',
+    description: DESCRIPTION,
+    url: '/',
+    images: [{ url: SHARE_IMAGE, width: 1200, alt: 'Fag Break from The Convention by Cody Burridge' }],
+  },
+  twitter: { card: 'summary_large_image', title: 'Cody Burridge | C STUDiO', description: DESCRIPTION, images: [SHARE_IMAGE] },
+  robots: SITE_LIVE ? { index: true, follow: true } : { index: false, follow: false },
+}
+
+// Tells Google who the artist is and links his accounts together.
+const PERSON = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${SITE_URL}/#cody`,
+      name: 'Cody Burridge',
+      jobTitle: 'Artist and photographer',
+      nationality: 'British',
+      url: SITE_URL,
+      sameAs: ['https://www.instagram.com/codyburridgestudio', 'https://www.instagram.com/codyburridgephoto'],
+    },
+    { '@type': 'WebSite', '@id': `${SITE_URL}/#site`, name: SITE_NAME, url: SITE_URL, publisher: { '@id': `${SITE_URL}/#cody` } },
+  ],
 }
 
 export default function RootLayout({
@@ -12,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en-GB">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -20,8 +58,12 @@ export default function RootLayout({
           href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;700&family=Poppins:wght@300;400&display=swap"
           rel="stylesheet"
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON) }} />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <Analytics />
+      </body>
     </html>
   )
 }
