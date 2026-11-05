@@ -65,7 +65,7 @@ const collections = [
     title: 'Psychedelic',
     year: 'Ongoing',
     pieces: 4,
-    description: 'Influenced by screen print and pop aesthetics, each piece becomes more immediate, more stylised.',
+    description: 'Photographs reworked in bold, saturated colour, influenced by screen print, pop art and the beautiful accident of misprinted colour proofs.',
   },
   {
     slug: 'book',
@@ -201,7 +201,7 @@ export default function Collections() {
                 color: 'rgba(255,255,255,0.35)',
                 letterSpacing: '0.04em',
               }}>
-                Prints of Cody Burridge&apos;s work, available for sale.
+                Limited edition fine art prints by Cody Burridge, available to collect.
               </p>
             </div>
             <div style={{ textAlign: 'right', flexShrink: 0 }}>
