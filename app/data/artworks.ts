@@ -15,6 +15,7 @@ export const ENQUIRY_GROUPS: EnquiryGroup[] = [
   { collection: "Neon Numbers", works: ["H6R0018", "H6R0043", "H6R0053", "H6R0058", "H6R0069", "H6R0081"] },
   { collection: "End of an Easel", works: ["Exhibition 001", "Exhibition 003", "Exhibition 007", "Exhibition 005", "Exhibition 009", "Exhibition 011", "Exhibition 013", "Exhibition 015"] },
   { collection: "Reminiscence", works: ["Death of a Clown", "Vivian Maier"] },
+  { collection: "Psychedelic", works: ["Psychedelic Trellick #Orange", "Psychedelic Power Station #1", "Psychedelic Dixon", "Psychedelic Bruno"] },
   { collection: "The Book", works: ["A Different View: Volume 1"] },
   { collection: 'Exhibitions', works: ['Altered State (2023)', 'The Magic Hour (2022)'] },
 ]
