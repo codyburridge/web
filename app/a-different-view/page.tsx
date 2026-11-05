@@ -15,7 +15,7 @@ export default function ADifferentView() {
       title="A Different View"
       year="2025"
       pieces={6}
-      description="Intimate scenes caught in the quiet between moments — light, colour, and stillness distilled into fine art."
+      description="Studies of colour, shape and light in the everyday."
       artworks={artworks}
       heroBgFile="1775464457183-UFBVCV0TEXOFGIZHX6TG/Off+Grid+Original.jpeg"
     />
