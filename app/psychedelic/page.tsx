@@ -13,7 +13,7 @@ export default function Psychedelic() {
       title="Psychedelic"
       year="Ongoing"
       pieces={4}
-      description="Influenced by screen print and pop aesthetics, each piece becomes more immediate, more stylised. Marked with the Psychedelic tag."
+      description="Photographs reworked in bold, saturated colour, influenced by screen print, pop art and the beautiful accident of misprinted colour proofs."
       artworks={artworks}
     />
   )
