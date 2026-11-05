@@ -206,33 +206,27 @@ export default function CollectionPage({
       {lightbox && (
         <div className={styles.lightbox} onClick={() => setLightbox(null)} role="dialog" aria-label={lightbox.art.title}>
           <button className={styles.lightboxClose} onClick={() => setLightbox(null)} aria-label="Close">✕</button>
-          <img
-            className={styles.lightboxMain}
-            src={lightbox.view === 'insitu' ? insituSrc(lightbox.art) : artSrc(lightbox.art)}
-            alt={lightbox.view === 'insitu' ? `${lightbox.art.title}, framed in situ` : lightbox.art.title}
-            onClick={(e) => e.stopPropagation()}
-          />
-          <div className={styles.lightboxBar} onClick={(e) => e.stopPropagation()}>
-            <p className={styles.lightboxCaption}>{lightbox.art.title}</p>
-            {lightbox.art.insitu && (
-              <div className={styles.lightboxThumbs}>
-                <button
-                  className={lightbox.view === 'art' ? styles.thumbActive : ''}
-                  onClick={() => setLightbox({ art: lightbox.art, view: 'art' })}
-                  aria-label="Show the artwork"
-                >
-                  <img src={artSrc(lightbox.art, '200w')} alt="" />
-                </button>
-                <button
-                  className={lightbox.view === 'insitu' ? styles.thumbActive : ''}
-                  onClick={() => setLightbox({ art: lightbox.art, view: 'insitu' })}
-                  aria-label="Show it framed in situ"
-                >
-                  <img src={insituSrc(lightbox.art)} alt="" />
-                </button>
+          <div className={styles.lightboxFrame} onClick={(e) => e.stopPropagation()}>
+            <img
+              className={styles.lightboxMain}
+              src={lightbox.view === 'insitu' ? insituSrc(lightbox.art) : artSrc(lightbox.art)}
+              alt={lightbox.view === 'insitu' ? `${lightbox.art.title}, framed in situ` : lightbox.art.title}
+            />
+            <div className={styles.lightboxBar}>
+              <div className={styles.lightboxInfo}>
+                <p className={styles.lightboxCaption}>{lightbox.art.title}</p>
+                <Link className={styles.lightboxEnquire} href={enquireHref(lightbox.art)}>Enquire</Link>
               </div>
-            )}
-            <Link className={styles.lightboxEnquire} href={enquireHref(lightbox.art)}>Enquire about this piece</Link>
+              {lightbox.art.insitu && (
+                <button
+                  className={styles.lightboxThumb}
+                  onClick={() => setLightbox({ art: lightbox.art, view: lightbox.view === 'art' ? 'insitu' : 'art' })}
+                  aria-label={lightbox.view === 'art' ? 'Show it framed in situ' : 'Show the artwork'}
+                >
+                  <img src={lightbox.view === 'art' ? insituSrc(lightbox.art) : artSrc(lightbox.art, '300w')} alt="" />
+                </button>
+              )}
+            </div>
           </div>
         </div>
       )}
