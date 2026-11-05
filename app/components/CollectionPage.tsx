@@ -98,10 +98,10 @@ export default function CollectionPage({
       </header>
 
       <nav className={`${styles.navOverlay} ${navOpen ? styles.navOverlayOpen : ''}`} aria-hidden={!navOpen}>
-        <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener" onClick={() => setNavOpen(false)}>Shop Prints</a>
         <Link href="/" onClick={() => setNavOpen(false)}>Collections</Link>
         <Link href="/bio" onClick={() => setNavOpen(false)}>About</Link>
         <Link href="/contact" onClick={() => setNavOpen(false)}>Contact</Link>
+        <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener" onClick={() => setNavOpen(false)}>Shop</a>
         <a href="#signup" onClick={() => setNavOpen(false)}>Join Preview List</a>
       </nav>
 
