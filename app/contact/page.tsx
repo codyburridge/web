@@ -75,7 +75,7 @@ export default function ContactPage() {
         transition: 'all 0.3s',
       }}>
         <Link href="/">
-          <img src={LOGO} alt="C.STUDIO" style={{ height: '24px', filter: 'invert(1)', opacity: 0.9, display: 'block' }} />
+          <img src={LOGO} alt="C.STUDIO" style={{ height: '32px', filter: 'invert(1)', opacity: 0.9, display: 'block' }} />
         </Link>
         <nav style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
           {NAV_LINKS.map(l => l.external
