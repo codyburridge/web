@@ -8,7 +8,7 @@ import { ENQUIRY_GROUPS } from '../data/artworks'
 const LOGO = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w'
 
 const NAV_LINKS = [
-  { label: 'Collections', href: '/' },
+  { label: 'Collections', href: '/collections' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
   { label: 'Shop', href: 'https://qnjaf1-se.myshopify.com', external: true },
@@ -87,7 +87,7 @@ export default function ContactPage() {
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none',
         transition: 'all 0.3s',
       }}>
-        <Link href="/">
+        <Link href="/collections">
           <img src={LOGO} alt="C.STUDIO" style={{ height: '32px', filter: 'invert(1)', opacity: 0.9, display: 'block' }} />
         </Link>
         <nav style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
@@ -165,7 +165,7 @@ export default function ContactPage() {
       </main>
 
       <footer style={s.footer}>
-        <Link href="/"><img src={LOGO} alt="Cody Burridge" style={{ height: '18px', filter: 'invert(1)', opacity: 0.4, display: 'block' }} /></Link>
+        <Link href="/collections"><img src={LOGO} alt="Cody Burridge" style={{ height: '18px', filter: 'invert(1)', opacity: 0.4, display: 'block' }} /></Link>
         <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
           {FOOTER_LINKS.map(l => l.external
             ? <a key={l.label} href={l.href} target="_blank" rel="noopener" style={s.footerLink}>{l.label}</a>
