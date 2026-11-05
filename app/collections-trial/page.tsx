@@ -101,7 +101,7 @@ export default function CollectionsTrial() {
       padding: '80px 24px',
     }}>
       {/* Logo */}
-      <Link href="/" style={{ marginBottom: '80px', opacity: 0.9, display: 'block' }}>
+      <Link href="/collections" style={{ marginBottom: '80px', opacity: 0.9, display: 'block' }}>
         <img
           src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
           alt="Cody Burridge C.STUDIO"
