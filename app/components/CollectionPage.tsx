@@ -189,7 +189,6 @@ export default function CollectionPage({
           />
         </Link>
         <div className={styles.footerLinks}>
-          <Link href="/">Collections</Link>
           <Link href="/exhibition">Exhibition</Link>
           <Link href="/bio">About</Link>
           <Link href="/contact">Contact</Link>
