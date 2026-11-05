@@ -10,6 +10,8 @@ export interface Artwork {
   file: string
   title: string
   objPos?: string
+  /** Optional in-situ image (the work framed on a wall). Full URL, or a Squarespace file path. */
+  insitu?: string
 }
 
 interface CollectionPageProps {
@@ -31,7 +33,7 @@ export default function CollectionPage({
 }: CollectionPageProps) {
   const [navOpen, setNavOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
-  const [lightbox, setLightbox] = useState<{ src: string; title: string } | null>(null)
+  const [lightbox, setLightbox] = useState<{ art: Artwork; view: 'art' | 'insitu' } | null>(null)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
 
   useEffect(() => {
@@ -62,8 +64,14 @@ export default function CollectionPage({
   }
 
   const openLightbox = (art: Artwork) => {
-    setLightbox({ src: `${BASE}${art.file}?format=1200w`, title: art.title })
+    setLightbox({ art, view: 'art' })
   }
+
+  const artSrc = (art: Artwork, size = '1500w') => `${BASE}${art.file}?format=${size}`
+  const insituSrc = (art: Artwork) =>
+    art.insitu ? (art.insitu.startsWith('http') ? art.insitu : `${BASE}${art.insitu}?format=1500w`) : ''
+  const enquireHref = (art: Artwork) =>
+    `/contact?collection=${encodeURIComponent(title)}&artwork=${encodeURIComponent(art.title)}`
 
   const bgFile = heroBgFile ?? artworks[0]?.file
   const bgUrl = bgFile ? `${BASE}${bgFile}?format=1200w` : ''
@@ -182,6 +190,7 @@ export default function CollectionPage({
         </Link>
         <div className={styles.footerLinks}>
           <Link href="/">Collections</Link>
+          <Link href="/exhibition">Exhibition</Link>
           <Link href="/bio">About</Link>
           <Link href="/contact">Contact</Link>
           <Link href="/terms">Terms</Link>
@@ -195,10 +204,36 @@ export default function CollectionPage({
       </footer>
 
       {lightbox && (
-        <div className={styles.lightbox} onClick={() => setLightbox(null)}>
+        <div className={styles.lightbox} onClick={() => setLightbox(null)} role="dialog" aria-label={lightbox.art.title}>
           <button className={styles.lightboxClose} onClick={() => setLightbox(null)} aria-label="Close">✕</button>
-          <img src={lightbox.src} alt={lightbox.title} onClick={(e) => e.stopPropagation()} />
-          <p className={styles.lightboxCaption}>{lightbox.title}</p>
+          <img
+            className={styles.lightboxMain}
+            src={lightbox.view === 'insitu' ? insituSrc(lightbox.art) : artSrc(lightbox.art)}
+            alt={lightbox.view === 'insitu' ? `${lightbox.art.title}, framed in situ` : lightbox.art.title}
+            onClick={(e) => e.stopPropagation()}
+          />
+          <div className={styles.lightboxBar} onClick={(e) => e.stopPropagation()}>
+            <p className={styles.lightboxCaption}>{lightbox.art.title}</p>
+            {lightbox.art.insitu && (
+              <div className={styles.lightboxThumbs}>
+                <button
+                  className={lightbox.view === 'art' ? styles.thumbActive : ''}
+                  onClick={() => setLightbox({ art: lightbox.art, view: 'art' })}
+                  aria-label="Show the artwork"
+                >
+                  <img src={artSrc(lightbox.art, '200w')} alt="" />
+                </button>
+                <button
+                  className={lightbox.view === 'insitu' ? styles.thumbActive : ''}
+                  onClick={() => setLightbox({ art: lightbox.art, view: 'insitu' })}
+                  aria-label="Show it framed in situ"
+                >
+                  <img src={insituSrc(lightbox.art)} alt="" />
+                </button>
+              </div>
+            )}
+            <Link className={styles.lightboxEnquire} href={enquireHref(lightbox.art)}>Enquire about this piece</Link>
+          </div>
         </div>
       )}
     </>
