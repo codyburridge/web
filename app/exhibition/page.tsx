@@ -33,6 +33,7 @@ const EXHIBITIONS = [
     kind: 'Joint exhibition',
     image: 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/1775658734204-WZAVAU9JYRZGAY56AA2G/image001.png?format=1500w',
     enquiry: 'Altered State (2023)',
+    instagram: 'https://www.instagram.com/stories/highlights/17985149980857814/',
   },
   {
     title: 'The Magic Hour',
@@ -41,6 +42,7 @@ const EXHIBITIONS = [
     kind: 'Solo exhibition',
     image: 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/1775659021902-J9ZKOJ77OSXSI1OMRZQJ/99+Projects+Flier_Cody_Pool_PV+Evite+Small.jpg?format=1500w',
     enquiry: 'The Magic Hour (2022)',
+    instagram: 'https://www.instagram.com/stories/highlights/18299112214048034/',
   },
 ]
 
@@ -124,6 +126,14 @@ export default function ExhibitionPage() {
                   padding: '12px 28px', fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', textDecoration: 'none',
                 }}
               >Enquire</Link>
+              {ex.instagram && (
+                <a
+                  href={ex.instagram}
+                  target="_blank"
+                  rel="noopener"
+                  style={{ display: 'inline-block', marginLeft: '20px', color: 'rgba(255,255,255,0.6)', fontSize: '10px', letterSpacing: '0.16em', textTransform: 'uppercase', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.3)', paddingBottom: '2px' }}
+                >See it on Instagram ↗</a>
+              )}
             </div>
           </article>
         ))}
