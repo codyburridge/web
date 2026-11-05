@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import StarLink from '../components/StarLink'
 
 // EDIT: commissioned and editorial work. Deliberately not in the menu; linked quietly from the homepage footer.
 // Each line below is one row on the page (one series per line). ar = width / height of the image.
@@ -65,7 +66,8 @@ export default function EditPage() {
         </div>
       </main>
 
-      <footer style={{ padding: '40px 24px 56px', textAlign: 'center' }}>
+      <footer style={{ padding: '40px 24px 56px', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '20px' }}>
+        <StarLink />
         <Link href="/" style={{ fontSize: '9px', letterSpacing: '0.16em', textTransform: 'uppercase', color: '#888', textDecoration: 'none' }}>Collections</Link>
       </footer>
     </div>
