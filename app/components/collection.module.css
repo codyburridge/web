@@ -41,7 +41,7 @@
   transform: translateX(-50%);
   line-height: 0;
 }
-.headerLogo img { height: 24px; width: auto; }
+.headerLogo img { height: 32px; width: auto; }
 .shopBtn {
   color: #111111;
   text-decoration: none;
