@@ -69,6 +69,7 @@ const collections = [
 ]
 
 const FOOTER_LINKS = [
+  { label: 'Exhibition', href: '/exhibition' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
   { label: 'Terms', href: '/terms' },
