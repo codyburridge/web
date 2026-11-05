@@ -52,7 +52,7 @@ const PAGES: Record<string, Entry> = {
   },
   psychedelic: {
     title: 'Psychedelic',
-    description: 'Psychedelic by Cody Burridge: screen print and pop colour versions of his photographs, including Psychedelic Trellick and Psychedelic Power Station. Limited edition prints.',
+    description: 'Psychedelic by Cody Burridge. Photographs reworked in bold, saturated colour, influenced by screen print, pop art and the beautiful accident of misprinted colour proofs. Limited edition prints.',
     image: '1738944701596-BAMIII6ZA7ENW9RBQCIO/Screenshot%2B2025-01-15%2Bat%2B19.12.30.png',
   },
   book: {
