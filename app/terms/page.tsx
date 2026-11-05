@@ -9,7 +9,7 @@ const NAV_LINKS = [
   { label: 'Collections', href: '/' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Shop', href: 'https://www.codyburridge.com/shop', external: true },
+  { label: 'Shop', href: 'https://qnjaf1-se.myshopify.com', external: true },
 ]
 
 const FOOTER_LINKS = [
@@ -19,7 +19,7 @@ const FOOTER_LINKS = [
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Instagram', href: 'https://www.instagram.com/codyburridgestudio', external: true },
-  { label: 'Shop', href: 'https://www.codyburridge.com/shop', external: true },
+  { label: 'Shop', href: 'https://qnjaf1-se.myshopify.com', external: true },
 ]
 
 const SECTIONS = [
@@ -88,7 +88,7 @@ export default function TermsPage() {
         transition: 'all 0.3s',
       }}>
         <Link href="/">
-          <img src={LOGO} alt="C.STUDIO" style={{ height: '22px', filter: 'invert(1)', opacity: 0.9, display: 'block' }} />
+          <img src={LOGO} alt="C.STUDIO" style={{ height: '24px', filter: 'invert(1)', opacity: 0.9, display: 'block' }} />
         </Link>
         <nav style={{ display: 'flex', gap: '28px', alignItems: 'center' }}>
           {NAV_LINKS.map(l => l.external
