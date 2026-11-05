@@ -12,42 +12,42 @@ const PAGES: Record<string, Entry> = {
   },
   'the-convention': {
     title: 'The Convention',
-    description: 'The Convention by Cody Burridge: fine art photographs of comic con characters caught in real city streets, including Fag Break, No Parking and Stand Pipe. Limited editions, 2026.',
+    description: 'The Convention by Cody Burridge. Fine art inspired by the Comic-Con phenomenon. Limited editions, 2026.',
     image: '72b110b9-f74f-4de9-8a9e-ee7a7ef480b2/Fag+Break+FIN+FLAT+copy.jpg',
   },
   'a-different-view': {
     title: 'A Different View',
-    description: 'A Different View by Cody Burridge: everyday scenes turned abstract through angle, focus and light. Fine art photographs and limited edition prints, ongoing since 2023.',
+    description: 'A Different View by Cody Burridge. Studies of colour, shape and light in the everyday. Fine art photographs, ongoing since 2023.',
     image: '1775464457183-UFBVCV0TEXOFGIZHX6TG/Off+Grid+Original.jpeg',
   },
   'the-magic-hour': {
     title: 'The Magic Hour',
-    description: 'The Magic Hour by Cody Burridge: late night petrol stations and French garages frozen in neon and silence. Fine art photographs, 2022.',
+    description: 'The Magic Hour by Cody Burridge. As daylight fades, artificial light gives familiar places a cinematic quality. Fine art photographs, 2022.',
     image: '1738781219424-O1YP57AGWCTG6N9B9IUR/_C9A5876.jpg',
   },
   'green-vs-grey': {
     title: 'Green vs Grey',
-    description: 'Green vs Grey by Cody Burridge: nature forcing its way through concrete, the quiet war between the organic and the built. Fine art photographs, 2023.',
+    description: 'Green vs Grey by Cody Burridge. A study in light and structure, abstracting Tokyo\'s architecture. Fine art photographs, 2023.',
     image: '1738850753650-OXJ53JQ3WVX8P1EGZGA2/S0400001.jpg',
   },
   'in-time-we-rust': {
     title: 'In Time We Rust',
-    description: 'In Time We Rust by Cody Burridge: decay as beauty, industrial relics and forgotten steel photographed at the edge of collapse. Fine art photographs, 2022.',
+    description: 'In Time We Rust by Cody Burridge. Layers of paint and iron, eroded and repainted over time, where decay becomes abstract beauty. Fine art photographs, 2022.',
     image: '1740583598017-ZXUH5UPFOJ0NY2N5DB6U/_H6R0262+CB+copy.jpg',
   },
   'neon-numbers': {
     title: 'Neon Numbers',
-    description: 'Neon Numbers by Cody Burridge: electric signage and the language of light, numerals glowing against the dark city. Fine art photographs, 2023.',
+    description: 'Neon Numbers by Cody Burridge. Graphic road markings seen in isolation become compositions of line and colour, echoing the language of early street culture. Fine art photographs, 2023.',
     image: '1740593183577-NWHQ87P95UA6BS1V9DD7/_H6R0018.jpg',
   },
   'end-of-an-easel': {
     title: 'End of an Easel',
-    description: 'End of an Easel by Cody Burridge: fine art photographed inside the gallery, where the work meets the wall. 2022.',
+    description: 'End of an Easel by Cody Burridge. Portraits of a colourist, found in the magnified traces of my father\'s easel. Fine art photographs, 2022.',
     image: '1740148196507-SABHVD2G8YYG9PYRW4VR/99projects_CodyBurridge_Exhibition2_001.jpg',
   },
   reminiscence: {
     title: 'Reminiscence',
-    description: 'Reminiscence by Cody Burridge: a meditation on memory, identity and the passage of time, including Death of a Clown and Vivian Maier.',
+    description: 'Reminiscence by Cody Burridge. Cinematic portraiture reimagining moments from the stories of recognised figures, with clues hidden in the frame.',
     image: '1740145738967-4H06G5BY0AUV9112NVPN/Death+of+a+Clown+Fin+16+bit+Crop+Grade+CB.jpg',
   },
   psychedelic: {
@@ -57,7 +57,7 @@ const PAGES: Record<string, Entry> = {
   },
   book: {
     title: 'A Different View: The Book',
-    description: 'A Different View, Volume 1: the collector book by Cody Burridge. Limited run, signed and numbered.',
+    description: 'A Different View, Volume 1 by Cody Burridge. An early selection from A Different View, where shifts in angle, focus and light transform the everyday into abstraction. Collector Edition, limited run, signed and numbered.',
     image: '6024c81a-6df1-48f7-8fbd-e72f800b19b6/Front+copy+A+Different+View.jpg',
   },
   bio: {
