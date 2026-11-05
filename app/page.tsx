@@ -74,7 +74,7 @@ const FOOTER_LINKS = [
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Instagram', href: 'https://www.instagram.com/codyburridgestudio', external: true },
-  { label: 'Shop', href: 'https://www.codyburridge.com/shop', external: true },
+  { label: 'Shop', href: 'https://qnjaf1-se.myshopify.com', external: true },
 ]
 
 export default function Home() {
@@ -97,7 +97,7 @@ export default function Home() {
         <img
           src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
           alt="Cody Burridge C.STUDIO"
-          style={{ height: '28px', width: 'auto', filter: 'invert(1)', display: 'block' }}
+          style={{ height: '31px', width: 'auto', filter: 'invert(1)', display: 'block' }}
         />
       </Link>
 
