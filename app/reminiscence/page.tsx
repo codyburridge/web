@@ -11,7 +11,7 @@ export default function Reminiscence() {
       title="Reminiscence"
       year="2025"
       pieces={2}
-      description="A meditation on memory, identity and the passage of time — portraits that linger long after the moment has passed."
+      description="Cinematic portraiture reimagining moments from the stories of recognised figures, with clues hidden in the frame."
       artworks={artworks}
       heroBgFile="1740145738967-4H06G5BY0AUV9112NVPN/Death+of+a+Clown+Fin+16+bit+Crop+Grade+CB.jpg"
     />
