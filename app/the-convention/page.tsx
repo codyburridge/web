@@ -21,7 +21,7 @@ export default function TheConvention() {
       title="The Convention"
       year="2024"
       pieces={12}
-      description="Where costume meets convention. A fine art series capturing the human theatre behind the mask."
+      description="Fine art inspired by the Comic-Con phenomenon."
       artworks={artworks}
     />
   )
