@@ -21,7 +21,7 @@ export default function TheMagicHour() {
       title="The Magic Hour"
       year="2022"
       pieces={12}
-      description="Late-night petrol stations and French garages, frozen in neon and silence."
+      description="As daylight fades, artificial light gives familiar places a cinematic quality."
       artworks={artworks}
     />
   )
