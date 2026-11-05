@@ -97,7 +97,7 @@ export default function Home() {
         <img
           src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
           alt="Cody Burridge C.STUDIO"
-          style={{ height: '31px', width: 'auto', filter: 'invert(1)', display: 'block' }}
+          style={{ height: '42px', width: 'auto', filter: 'invert(1)', display: 'block' }}
         />
       </Link>
 
