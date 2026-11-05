@@ -1,0 +1,20 @@
+// Every artwork by collection. Used by the Contact page's enquiry dropdown.
+// Keep in step with the artworks listed in each collection page.
+
+export interface EnquiryGroup {
+  collection: string
+  works: string[]
+}
+
+export const ENQUIRY_GROUPS: EnquiryGroup[] = [
+  { collection: "The Convention", works: ["Fag Break", "For Rent", "No Parking", "Waiting For Batman", "I Am Sure He Said 214", "No Standing", "Chained to the Job", "Stand Pipe", "Lost Bunny", "Did You Hear Something?", "Shadow of Doubt", "Delayed"] },
+  { collection: "A Different View", works: ["Off Grid", "Pool Corner 1", "Yellow Sweep", "Going Home", "Kate's Brother Light", "Just Leaving"] },
+  { collection: "The Magic Hour", works: ["Bruno's Garage", "Late Night Bar", "24/24", "Night Swimming", "Le Clerc Carmeaux", "Car Wash", "Esso Expresso", "The Magic Hour", "Green Dream", "Blue Gazole", "La Laverie", "Petrol Station, London"] },
+  { collection: "Green vs Grey", works: ["Grey #1", "Green #1", "Grey #2", "Green #2", "Green #4", "Grey #3", "Green #3", "Grey #4"] },
+  { collection: "In Time We Rust", works: ["Mustard Underneath", "Drip Lines", "Songlines", "Single Yellow", "Rust in Time", "A Fleck of Green", "Klien Blue", "No 32"] },
+  { collection: "Neon Numbers", works: ["H6R0018", "H6R0043", "H6R0053", "H6R0058", "H6R0069", "H6R0081"] },
+  { collection: "End of an Easel", works: ["Exhibition 001", "Exhibition 003", "Exhibition 007", "Exhibition 005", "Exhibition 009", "Exhibition 011", "Exhibition 013", "Exhibition 015"] },
+  { collection: "Reminiscence", works: ["Death of a Clown", "Vivian Maier"] },
+  { collection: "The Book", works: ["A Different View: Volume 1"] },
+  { collection: 'Exhibitions', works: ['Altered State (2023)', 'The Magic Hour (2022)'] },
+]
