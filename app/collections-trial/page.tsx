@@ -60,6 +60,13 @@ const collections = [
     description: 'A meditation on memory, identity and the passage of time.',
   },
   {
+    slug: 'psychedelic',
+    title: 'Psychedelic',
+    year: 'Ongoing',
+    pieces: 4,
+    description: 'Influenced by screen print and pop aesthetics, each piece becomes more immediate, more stylised.',
+  },
+  {
     slug: 'book',
     title: 'A Different View — The Book',
     year: 'Ongoing',
