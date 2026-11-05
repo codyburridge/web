@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { ENQUIRY_GROUPS } from '../data/artworks'
 
 const LOGO = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w'
 
@@ -14,6 +15,7 @@ const NAV_LINKS = [
 
 const FOOTER_LINKS = [
   { label: 'Collections', href: '/' },
+  { label: 'Exhibition', href: '/exhibition' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
   { label: 'Terms', href: '/terms' },
@@ -32,7 +34,18 @@ const s = {
 export default function ContactPage() {
   const [scrolled, setScrolled] = useState(false)
   const [sent, setSent] = useState(false)
-  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', message: '' })
+  const [form, setForm] = useState({ firstName: '', lastName: '', email: '', artwork: '', message: '' })
+
+  // Pre-select the artwork when arriving from a lightbox "Enquire about this piece" link.
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search)
+    const art = q.get('artwork')
+    const col = q.get('collection')
+    if (!art) return
+    const group = ENQUIRY_GROUPS.find(g => g.collection === col && g.works.includes(art))
+      ?? ENQUIRY_GROUPS.find(g => g.works.includes(art))
+    if (group) setForm(f => ({ ...f, artwork: `${group.collection}: ${art}` }))
+  }, [])
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 10)
@@ -42,9 +55,9 @@ export default function ContactPage() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    const { firstName, lastName, email, message } = form
-    const subject = encodeURIComponent('Studio enquiry')
-    const body = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}\n\n${message}`)
+    const { firstName, lastName, email, artwork, message } = form
+    const subject = encodeURIComponent(artwork ? `Enquiry: ${artwork}` : 'Studio enquiry')
+    const body = encodeURIComponent(`Name: ${firstName} ${lastName}\nEmail: ${email}${artwork ? `\nArtwork: ${artwork}` : ''}\n\n${message}`)
     window.location.href = `mailto:hello@codyburridge.com?subject=${subject}&body=${body}`
     setSent(true)
   }
@@ -124,6 +137,22 @@ export default function ContactPage() {
                 <input type="text" placeholder="Last name" value={form.lastName} onChange={e => setForm(f => ({ ...f, lastName: e.target.value }))} style={inputStyle} />
               </div>
               <input type="email" placeholder="Email address" required value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))} style={inputStyle} />
+              <select
+                aria-label="Which piece is this about?"
+                value={form.artwork}
+                onChange={e => setForm(f => ({ ...f, artwork: e.target.value }))}
+                style={{ ...inputStyle, appearance: 'none' as const, color: form.artwork ? '#fff' : 'rgba(255,255,255,0.45)', cursor: 'pointer' }}
+              >
+                <option value="">Which piece is this about? (optional)</option>
+                {ENQUIRY_GROUPS.map(g => (
+                  <optgroup key={g.collection} label={g.collection} style={{ color: '#111' }}>
+                    {g.works.map(w => (
+                      <option key={w} value={`${g.collection}: ${w}`} style={{ color: '#111' }}>{w}</option>
+                    ))}
+                  </optgroup>
+                ))}
+                <option value="Something else" style={{ color: '#111' }}>Something else</option>
+              </select>
               <textarea placeholder="Message" required rows={6} value={form.message} onChange={e => setForm(f => ({ ...f, message: e.target.value }))} style={{ ...inputStyle, resize: 'vertical' as const }} />
               <button type="submit" style={{
                 background: '#fff', color: '#0a0a0a', border: 'none', padding: '14px 40px',
