@@ -2,9 +2,9 @@ import CollectionPage from '../components/CollectionPage'
 
 const artworks = [
   { file: '1738944701596-BAMIII6ZA7ENW9RBQCIO/Screenshot%2B2025-01-15%2Bat%2B19.12.30.png', title: 'Psychedelic Trellick #Orange', insitu: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/insitu-psychedelic-04-psychedelic-trellick-orange-in-situ.jpg?v=1793956764' },
-  { file: '1738944758705-1Y5CI8Y1ZOVS92F44OCO/Screenshot%2B2025-01-15%2Bat%2B19.13.02.png', title: 'Psychedelic Power Station #1' },
-  { file: '1738944576686-APL6O984VS6RP11S66BU/Screenshot%2B2025-01-17%2Bat%2B15.02.20.png', title: 'Psychedelic Dixon' },
-  { file: '1739380195794-M2HXGCCFWE2OO1VM755Q/Screenshot%2B2024-04-24%2Bat%2B10.56.54.jpg', title: 'Psychedelic Bruno' },
+  { file: '1738944758705-1Y5CI8Y1ZOVS92F44OCO/Screenshot%2B2025-01-15%2Bat%2B19.13.02.png', title: 'Psychedelic Power Station #1', insitu: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/insitu-psychedelic-01-power-station-1.jpg?v=1793958181' },
+  { file: '1738944576686-APL6O984VS6RP11S66BU/Screenshot%2B2025-01-17%2Bat%2B15.02.20.png', title: 'Psychedelic Dixon', insitu: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/insitu-psychedelic-02-dixon.jpg?v=1793958185' },
+  { file: '1739380195794-M2HXGCCFWE2OO1VM755Q/Screenshot%2B2024-04-24%2Bat%2B10.56.54.jpg', title: 'Psychedelic Bruno', insitu: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/insitu-psychedelic-03-bruno.jpg?v=1793958189' },
 ]
 
 export default function Psychedelic() {
