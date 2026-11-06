@@ -10,7 +10,7 @@ const NAV_LINKS = [
   { label: 'Collections', href: '/collections' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Shop', href: 'https://qnjaf1-se.myshopify.com', external: true },
+  { label: 'Shop', href: 'https://shop.codyburridge.com', external: true },
 ]
 
 const FOOTER_LINKS = [
@@ -20,7 +20,7 @@ const FOOTER_LINKS = [
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Instagram', href: 'https://www.instagram.com/codyburridgestudio', external: true },
-  { label: 'Shop', href: 'https://qnjaf1-se.myshopify.com', external: true },
+  { label: 'Shop', href: 'https://shop.codyburridge.com', external: true },
 ]
 
 const BIO_PARAS = [
