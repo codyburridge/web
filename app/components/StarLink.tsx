@@ -5,7 +5,7 @@ import { useState } from 'react'
 // Cody's star (the Psychedelic tag). Sits at the bottom of the pages and always goes to the shop.
 const BLACK = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-star-psychedelic-and-star-blk.png?v=1793961765'
 const PINK = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-star-psychedelic-and-star-pink.png?v=1793961764'
-const SHOP = 'https://qnjaf1-se.myshopify.com'
+const SHOP = 'https://shop.codyburridge.com'
 
 export default function StarLink({ dark = false }: { dark?: boolean }) {
   const [hover, setHover] = useState(false)
