@@ -12,7 +12,7 @@ export const ENQUIRY_GROUPS: EnquiryGroup[] = [
   { collection: "The Magic Hour", works: ["Bruno's Garage", "Late Night Bar", "24/24", "Night Swimming", "Le Clerc Carmeaux", "Car Wash", "Esso Expresso", "The Magic Hour", "Green Dream", "Blue Gazole", "La Laverie", "Petrol Station, London"] },
   { collection: "Green vs Grey", works: ["Grey #1", "Green #1", "Grey #2", "Green #2", "Green #4", "Grey #3", "Green #3", "Grey #4"] },
   { collection: "In Time We Rust", works: ["Mustard Underneath", "Drip Lines", "Songlines", "Single Yellow", "Rust in Time", "A Fleck of Green", "Klien Blue", "No 32"] },
-  { collection: "Neon Numbers", works: ["H6R0018", "H6R0043", "H6R0053", "H6R0058", "H6R0069", "H6R0081"] },
+  { collection: "Neon Numbers", works: ["Blue Water", "Plus Two Hundred", "Green Cable", "Orange Twenty-Four", "Minus Twenty-Eight, Minus Thirty-Five", "Orange Sixty-Four"] },
   { collection: "End of an Easel", works: ["Exhibition 001", "Exhibition 003", "Exhibition 007", "Exhibition 005", "Exhibition 009", "Exhibition 011", "Exhibition 013", "Exhibition 015"] },
   { collection: "Reminiscence", works: ["Death of a Clown", "Vivian Maier"] },
   { collection: "Psychedelic", works: ["Psychedelic Trellick #Orange", "Psychedelic Power Station #1", "Psychedelic Dixon", "Psychedelic Bruno"] },
