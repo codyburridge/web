@@ -148,7 +148,9 @@ export default function Collections() {
                   color: '#ffffff',
                   marginBottom: '6px',
                 }}>
-                  {col.title}
+                  {col.slug === 'psychedelic'
+                    ? <img src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/psychedelic-tag-pink.png?v=1793960303" alt="Psychedelic" style={{ height: 'clamp(40px, 7vw, 68px)', width: 'auto', display: 'block' }} />
+                    : col.title}
                 </p>
                 <p style={{
                   fontSize: '11px',
