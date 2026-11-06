@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import StarLink from '../components/StarLink'
 
-const LOGO = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w'
+const LOGO = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=400'
 const SHOP = 'https://qnjaf1-se.myshopify.com'
 
 const NAV_LINKS = [
@@ -31,7 +31,7 @@ const EXHIBITIONS = [
     date: '2 February 2023',
     venue: '140 Golborne Road, London W11',
     kind: 'Joint exhibition',
-    image: 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/1775658734204-WZAVAU9JYRZGAY56AA2G/image001.png?format=1500w',
+    image: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-1775658734204-wzavau9jyrzgay56aa2g-image001.webp?v=1793961745&width=1500',
     enquiry: 'Altered State (2023)',
     instagram: 'https://www.instagram.com/stories/highlights/17985149980857814/',
   },
@@ -40,7 +40,7 @@ const EXHIBITIONS = [
     date: '10 June 2022',
     venue: '99 Projects, 99 Chamberlayne Road, London NW10',
     kind: 'Solo exhibition',
-    image: 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/1775659021902-J9ZKOJ77OSXSI1OMRZQJ/99+Projects+Flier_Cody_Pool_PV+Evite+Small.jpg?format=1500w',
+    image: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-1775659021902-j9zkoj77osxsi1omrzqj-99-projects-flier-cody-pool-pv-evite-small.webp?v=1793961745&width=1500',
     enquiry: 'The Magic Hour (2022)',
     instagram: 'https://www.instagram.com/stories/highlights/18299112214048034/',
   },
