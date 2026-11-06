@@ -3,8 +3,8 @@
 import { useState } from 'react'
 
 // Cody's star (the Psychedelic tag). Sits at the bottom of the pages and always goes to the shop.
-const BLACK = 'https://static1.squarespace.com/static/5eeb2c93738e693280f39e07/t/67a641addb81e5583d83eccf/1738949037483/Psychedelic+and+Star+Blk.png'
-const PINK = 'https://static1.squarespace.com/static/5eeb2c93738e693280f39e07/t/67a641ad6d84db21b0b69de5/1738949037459/Psychedelic+and+Star+Pink.png'
+const BLACK = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-star-psychedelic-and-star-blk.png?v=1793961765'
+const PINK = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-star-psychedelic-and-star-pink.png?v=1793961764'
 const SHOP = 'https://qnjaf1-se.myshopify.com'
 
 export default function StarLink({ dark = false }: { dark?: boolean }) {
