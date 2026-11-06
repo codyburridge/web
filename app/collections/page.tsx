@@ -112,7 +112,7 @@ export default function Collections() {
       </Link>
 
       {/* Collections */}
-      <style>{`.psyTag img{display:block}.psyTag .psyPink{display:none}a:hover .psyTag .psyWhite{display:none}a:hover .psyTag .psyPink{display:block}`}</style>
+      <style>{`.psyTag img{display:block}.psyTag .psyPink{display:none}a:hover .psyTag .psyWhite{display:none}a:hover .psyTag .psyPink{display:block}.convTitle{transition:color .2s}a:hover .convTitle{color:#e3120b !important}`}</style>
       <div style={{ width: '100%', maxWidth: '640px' }}>
         <p style={{
           fontSize: '9px',
@@ -136,11 +136,11 @@ export default function Collections() {
               cursor: 'pointer',
               transition: 'opacity 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = col.slug === 'psychedelic' ? '1' : '0.6')}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = col.slug === 'psychedelic' || col.slug === 'the-convention' ? '1' : '0.6')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
               <div>
-                <p style={{
+                <p className={col.slug === 'the-convention' ? 'convTitle' : undefined} style={{
                   fontFamily: "'Jost', sans-serif",
                   fontSize: 'clamp(22px, 4vw, 36px)',
                   fontWeight: 700,
