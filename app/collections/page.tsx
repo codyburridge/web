@@ -155,17 +155,17 @@ export default function Collections() {
                 </p>
                 <p style={{
                   fontSize: '11px',
-                  color: 'rgba(255,255,255,0.35)',
+                  color: 'rgba(255,255,255,0.55)',
                   letterSpacing: '0.04em',
                 }}>
                   {col.description}
                 </p>
               </div>
               <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase' }}>
+                <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
                   {col.pieces} pieces
                 </p>
-                <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.2)', marginTop: '4px' }}>
+                <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>
                   {col.year}
                 </p>
               </div>
@@ -201,14 +201,14 @@ export default function Collections() {
               </p>
               <p style={{
                 fontSize: '11px',
-                color: 'rgba(255,255,255,0.35)',
+                color: 'rgba(255,255,255,0.55)',
                 letterSpacing: '0.04em',
               }}>
                 Limited edition fine art prints by Cody Burridge, available to collect.
               </p>
             </div>
             <div style={{ textAlign: 'right', flexShrink: 0 }}>
-              <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', textTransform: 'uppercase' }}>
+              <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
                 Shop ↗
               </p>
             </div>
