@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const SHOP = 'https://qnjaf1-se.myshopify.com'
+const SHOP = 'https://shop.codyburridge.com'
 
 // Old Squarespace addresses, sent permanently to their new home so Google rankings carry over.
 const to = (destination, sources) => sources.map(source => ({ source, destination, permanent: true }))
