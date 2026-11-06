@@ -15,7 +15,7 @@ export default function NeonNumbers() {
       title="Neon Numbers"
       year="2025"
       pieces={6}
-      description="Graphic road markings seen in isolation become compositions of line and colour, echoing the language of early street culture."
+      description="Graphic road markings seen in isolation form compositions of line and colour, echoing the language of early street culture."
       artworks={artworks}
       heroBgFile="1740593183577-NWHQ87P95UA6BS1V9DD7/_H6R0018.jpg"
     />
