@@ -15,6 +15,7 @@ export default function Psychedelic() {
       pieces={4}
       description="Photographs reworked in bold, saturated colour, influenced by screen print, pop art and the beautiful accident of misprinted colour proofs."
       artworks={artworks}
+      titleImage="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/psychedelic-tag-pink.png?v=1793960303"
     />
   )
 }
