@@ -6,7 +6,7 @@ import Link from 'next/link'
 // To change the film, swap VIDEO (and POSTER, the still shown while it loads).
 const VIDEO = 'https://cdn.shopify.com/videos/c/vp/7f826cbfb06a48ba885004e9c8b1a927/7f826cbfb06a48ba885004e9c8b1a927.HD-720p-1.6Mbps-100139938.mp4'
 const POSTER = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/cstudio-intro-poster.jpg?v=1793884506'
-const LOGO = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w'
+const LOGO = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=400'
 
 export default function Intro() {
   return (
