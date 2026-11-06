@@ -167,7 +167,7 @@ export default function CollectionPage({
         <p className={styles.signupEyebrow}>Collector Access</p>
         <h2>Join the<br />Preview List</h2>
         <p className={styles.signupSub}>
-          First access to new works, collector editions and releases — before they go public.
+          First access to new works, collector editions and releases, before they go public.
         </p>
         <form
           className={styles.signupForm}
