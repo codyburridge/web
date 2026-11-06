@@ -83,7 +83,7 @@ const FOOTER_LINKS = [
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' },
   { label: 'Instagram', href: 'https://www.instagram.com/codyburridgestudio', external: true },
-  { label: 'Shop', href: 'https://qnjaf1-se.myshopify.com', external: true },
+  { label: 'Shop', href: 'https://shop.codyburridge.com', external: true },
   { label: 'Edit', href: '/edit' },
 ]
 
@@ -173,7 +173,7 @@ export default function Collections() {
           </Link>
         ))}
 
-        <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener" style={{ textDecoration: 'none' }}>
+        <a href="https://shop.codyburridge.com" target="_blank" rel="noopener" style={{ textDecoration: 'none' }}>
           <div style={{
             borderTop: '1px solid rgba(255,255,255,0.1)',
             padding: '28px 0',
