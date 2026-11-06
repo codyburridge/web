@@ -1,5 +1,5 @@
 // Site-wide settings. At launch on codyburridge.com, set SITE_LIVE to true so Google may index the site.
-export const SITE_LIVE = false
+export const SITE_LIVE = true
 export const SITE_URL = 'https://www.codyburridge.com'
 export const SITE_NAME = 'Cody Burridge'
 export const META_PIXEL_ID = '2191602104789421'
