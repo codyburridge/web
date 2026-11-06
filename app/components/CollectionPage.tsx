@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import styles from './collection.module.css'
 import StarLink from './StarLink'
+import { imgUrl } from '../img'
 
-const BASE = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/'
 
 export interface Artwork {
   file: string
@@ -70,14 +70,14 @@ export default function CollectionPage({
     setLightbox({ art, view: 'art' })
   }
 
-  const artSrc = (art: Artwork, size = '1500w') => `${BASE}${art.file}?format=${size}`
+  const artSrc = (art: Artwork, size = '1500w') => imgUrl(art.file, parseInt(size))
   const insituSrc = (art: Artwork) =>
-    art.insitu ? (art.insitu.startsWith('http') ? art.insitu : `${BASE}${art.insitu}?format=1500w`) : ''
+    art.insitu ? (art.insitu.startsWith('http') ? art.insitu : imgUrl(art.insitu)) : ''
   const enquireHref = (art: Artwork) =>
     `/contact?collection=${encodeURIComponent(title)}&artwork=${encodeURIComponent(art.title)}`
 
   const bgFile = heroBgFile ?? artworks[0]?.file
-  const bgUrl = bgFile ? `${BASE}${bgFile}?format=1200w` : ''
+  const bgUrl = bgFile ? imgUrl(bgFile, 1200) : ''
 
   const titleWords = title.split(' ')
   const titleDisplay = titleWords.length >= 3
@@ -96,7 +96,7 @@ export default function CollectionPage({
         </button>
         <Link className={styles.headerLogo} href="/collections">
           <img
-            src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w"
+            src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=400"
             alt="Cody Burridge C.STUDIO"
           />
         </Link>
@@ -149,7 +149,7 @@ export default function CollectionPage({
               onClick={() => openLightbox(art)}
             >
               <img
-                src={`${BASE}${art.file}?format=800w`}
+                src={imgUrl(art.file, 800)}
                 alt={`${art.title}, from ${title} by Cody Burridge, fine art photograph`}
                 loading="lazy"
                 decoding="async"
@@ -193,7 +193,7 @@ export default function CollectionPage({
       <footer className={styles.footer}>
         <Link className={styles.footerLogo} href="/collections">
           <img
-            src="https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=200w"
+            src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=200"
             alt="Cody Burridge"
           />
         </Link>
@@ -222,7 +222,7 @@ export default function CollectionPage({
           author: { '@type': 'Person', name: 'Cody Burridge' },
           image: artworks.map(art => ({
             '@type': 'ImageObject',
-            contentUrl: `${BASE}${art.file}?format=1500w`,
+            contentUrl: imgUrl(art.file),
             name: art.title,
             caption: `${art.title}, ${title}, Cody Burridge`,
             creator: { '@type': 'Person', name: 'Cody Burridge' },
