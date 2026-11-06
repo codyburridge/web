@@ -22,6 +22,7 @@ interface CollectionPageProps {
   description: string
   artworks: Artwork[]
   heroBgFile?: string
+  titleImage?: string
 }
 
 export default function CollectionPage({
@@ -31,6 +32,7 @@ export default function CollectionPage({
   description,
   artworks,
   heroBgFile,
+  titleImage,
 }: CollectionPageProps) {
   const [navOpen, setNavOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
@@ -124,7 +126,9 @@ export default function CollectionPage({
         )}
         <div className={styles.heroContent}>
           <p className={styles.heroEyebrow}>Fine Art Photography · Limited Editions</p>
-          <h1>{titleDisplay}</h1>
+          <h1>{titleImage
+            ? <img src={titleImage} alt={title} style={{ width: 'clamp(260px, 50vw, 620px)', height: 'auto', display: 'inline-block', verticalAlign: 'middle' }} />
+            : titleDisplay}</h1>
           <p className={styles.heroSub}>{description}</p>
           <a className={styles.heroCta} href="#gallery">View the Series</a>
           <a className={styles.heroJoin} href="#signup">Join the Preview List</a>
