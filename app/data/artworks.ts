@@ -14,7 +14,7 @@ export const ENQUIRY_GROUPS: EnquiryGroup[] = [
   { collection: "In Time We Rust", works: ["Mustard Underneath", "Drip Lines", "Songlines", "Single Yellow", "Rust in Time", "A Fleck of Green", "Klien Blue", "No 32"] },
   { collection: "Neon Numbers", works: ["Blue Water", "Plus Two Hundred", "Green Cable", "Orange Twenty-Four", "Minus Twenty-Eight, Minus Thirty-Five", "Orange Sixty-Four"] },
   { collection: "End of an Easel", works: ["Exhibition 001", "Exhibition 003", "Exhibition 007", "Exhibition 005", "Exhibition 009", "Exhibition 011", "Exhibition 013", "Exhibition 015"] },
-  { collection: "Reminiscence", works: ["Death of a Clown", "Vivian Maier"] },
+  { collection: "Reminiscence", works: ["Auguste and the Harlequin (The Clown)", "Vivian (Portrait of a Photographer)"] },
   { collection: "Psychedelic", works: ["Psychedelic Trellick #Orange", "Psychedelic Power Station #1", "Psychedelic Dixon", "Psychedelic Bruno"] },
   { collection: "The Book", works: ["A Different View: Volume 1"] },
   { collection: 'Exhibitions', works: ['Altered State (2023)', 'The Magic Hour (2022)'] },
