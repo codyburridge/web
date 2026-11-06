@@ -112,6 +112,7 @@ export default function Collections() {
       </Link>
 
       {/* Collections */}
+      <style>{`.psyTag img{display:block}.psyTag .psyPink{display:none}a:hover .psyTag .psyWhite{display:none}a:hover .psyTag .psyPink{display:block}`}</style>
       <div style={{ width: '100%', maxWidth: '640px' }}>
         <p style={{
           fontSize: '9px',
@@ -135,7 +136,7 @@ export default function Collections() {
               cursor: 'pointer',
               transition: 'opacity 0.2s',
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.6')}
+            onMouseEnter={(e) => (e.currentTarget.style.opacity = col.slug === 'psychedelic' ? '1' : '0.6')}
             onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
             >
               <div>
@@ -149,7 +150,7 @@ export default function Collections() {
                   marginBottom: '6px',
                 }}>
                   {col.slug === 'psychedelic'
-                    ? <img src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/psychedelic-tag-pink.png?v=1793960303" alt="Psychedelic" style={{ height: 'clamp(40px, 7vw, 68px)', width: 'auto', display: 'block' }} />
+                    ? <span className="psyTag" style={{ display: 'block' }}><img className="psyWhite" src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/psychedelic-tag-white.png?v=1793960308" alt="Psychedelic" style={{ height: 'clamp(40px, 7vw, 68px)', width: 'auto' }} /><img className="psyPink" src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/psychedelic-tag-pink.png?v=1793960303" alt="" aria-hidden="true" style={{ height: 'clamp(40px, 7vw, 68px)', width: 'auto' }} /></span>
                     : col.title}
                 </p>
                 <p style={{
