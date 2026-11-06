@@ -100,7 +100,7 @@ export default function CollectionPage({
             alt="Cody Burridge C.STUDIO"
           />
         </Link>
-        <a className={styles.shopBtn} href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener" aria-label="Shop">
+        <a className={styles.shopBtn} href="https://shop.codyburridge.com" target="_blank" rel="noopener" aria-label="Shop">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
             <path d="M5 8h14l-1.2 12.2a1 1 0 0 1-1 .8H7.2a1 1 0 0 1-1-.8L5 8z" />
             <path d="M9 8V6.5a3 3 0 0 1 6 0V8" />
@@ -112,7 +112,7 @@ export default function CollectionPage({
         <Link href="/collections" onClick={() => setNavOpen(false)}>Collections</Link>
         <Link href="/bio" onClick={() => setNavOpen(false)}>About</Link>
         <Link href="/contact" onClick={() => setNavOpen(false)}>Contact</Link>
-        <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener" onClick={() => setNavOpen(false)}>Shop</a>
+        <a href="https://shop.codyburridge.com" target="_blank" rel="noopener" onClick={() => setNavOpen(false)}>Shop</a>
         <a href="#signup" onClick={() => setNavOpen(false)}>Join Preview List</a>
       </nav>
 
@@ -204,7 +204,7 @@ export default function CollectionPage({
           <Link href="/terms">Terms</Link>
           <Link href="/privacy">Privacy</Link>
           <a href="https://www.instagram.com/codyburridgestudio" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://qnjaf1-se.myshopify.com" target="_blank" rel="noopener">Shop</a>
+          <a href="https://shop.codyburridge.com" target="_blank" rel="noopener">Shop</a>
         </div>
         <StarLink />
         <p style={{ fontSize: '9px', color: 'rgba(0,0,0,0.2)', letterSpacing: '0.06em' }}>
