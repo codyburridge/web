@@ -2,11 +2,11 @@
 
 import Link from 'next/link'
 import StarLink from '../components/StarLink'
+import { imgUrl } from '../img'
 
 // EDIT: commissioned and editorial work. Deliberately not in the menu; linked quietly from the homepage footer.
 // Each line below is one row on the page (one series per line). ar = width / height of the image.
-const BASE = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/'
-const LOGO = 'https://images.squarespace-cdn.com/content/v1/5eeb2c93738e693280f39e07/36ccec98-077c-482e-9a8e-cf3d20fa0f61/Cody+Burridge_Logo_1000+small.png?format=400w'
+const LOGO = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=400'
 
 const ROWS: { f: string; ar: number }[][] = [
   [{ f: '8feced84-7945-4714-9a2b-788ddae5317b/BBC-OOH-Traitors_FINRetouch_48_Green_Logo+2500+pix.jpg', ar: 2.0 }],
@@ -53,7 +53,7 @@ export default function EditPage() {
               {row.map(img => (
                 <div key={img.f} style={{ flex: `${img.ar} 1 0`, minWidth: 0 }}>
                   <img
-                    src={`${BASE}${img.f}?format=1500w`}
+                    src={imgUrl(img.f)}
                     alt=""
                     loading={i < 2 ? 'eager' : 'lazy'}
                     decoding="async"
