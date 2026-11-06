@@ -43,7 +43,7 @@ const collections = [
     title: 'Neon Numbers',
     year: '2023',
     pieces: 6,
-    description: 'Graphic road markings seen in isolation become compositions of line and colour, echoing the language of early street culture.',
+    description: 'Graphic road markings seen in isolation form compositions of line and colour, echoing the language of early street culture.',
   },
   {
     slug: 'end-of-an-easel',
