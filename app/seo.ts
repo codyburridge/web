@@ -38,7 +38,7 @@ const PAGES: Record<string, Entry> = {
   },
   'neon-numbers': {
     title: 'Neon Numbers',
-    description: 'Neon Numbers by Cody Burridge. Graphic road markings seen in isolation become compositions of line and colour, echoing the language of early street culture. Fine art photographs, 2023.',
+    description: 'Neon Numbers by Cody Burridge. Graphic road markings seen in isolation form compositions of line and colour, echoing the language of early street culture. Fine art photographs, 2023.',
     image: '1740593183577-NWHQ87P95UA6BS1V9DD7/_H6R0018.jpg',
   },
   'end-of-an-easel': {
