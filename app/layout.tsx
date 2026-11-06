@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Analytics from './components/Analytics'
-import { SITE_LIVE, SITE_URL, SITE_NAME, IMG } from './site'
+import { SITE_LIVE, SITE_URL, SITE_NAME } from './site'
+import { imgUrl } from './img'
 
 const DESCRIPTION = 'Cody Burridge is a British fine art photographer. Limited edition series including The Convention, A Different View, The Magic Hour and Psychedelic, with prints from C STUDiO.'
-const SHARE_IMAGE = `${IMG}72b110b9-f74f-4de9-8a9e-ee7a7ef480b2/Fag+Break+FIN+FLAT+copy.jpg?format=1200w`
+const SHARE_IMAGE = imgUrl('72b110b9-f74f-4de9-8a9e-ee7a7ef480b2/Fag+Break+FIN+FLAT+copy.jpg', 1200)
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
