@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
-import { IMG, SITE_NAME } from './site'
+import { SITE_NAME } from './site'
+import { imgUrl } from './img'
 
 type Entry = { title: string; description: string; image?: string; noindex?: boolean }
 
@@ -84,7 +85,7 @@ const PAGES: Record<string, Entry> = {
 
 export function seo(key: string): Metadata {
   const p = PAGES[key]
-  const image = p.image ? `${IMG}${p.image}?format=1200w` : undefined
+  const image = p.image ? imgUrl(p.image, 1200) : undefined
   return {
     title: p.title,
     description: p.description,
