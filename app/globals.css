@@ -8,6 +8,11 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Stop the phone's pull-down spring at the top and bottom of pages */
+html, body {
+  overscroll-behavior-y: none;
+}
+
 :root {
   --black: #111111;
   --white: #ffffff;
