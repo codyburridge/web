@@ -103,7 +103,7 @@ export default function Collections() {
       padding: '80px 24px',
     }}>
       {/* Logo */}
-      <Link href="/collections" style={{ marginBottom: '80px', opacity: 0.9, display: 'block' }}>
+      <Link href="/collections" style={{ marginBottom: '40px', opacity: 0.9, display: 'block' }}>
         <img
           src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=400"
           alt="Cody Burridge C.STUDIO"
