@@ -22,6 +22,7 @@ interface CollectionPageProps {
   description: string
   artworks: Artwork[]
   heroBgFile?: string
+  heroBgPos?: string
   titleImage?: string
 }
 
@@ -32,6 +33,7 @@ export default function CollectionPage({
   description,
   artworks,
   heroBgFile,
+  heroBgPos,
   titleImage,
 }: CollectionPageProps) {
   const [navOpen, setNavOpen] = useState(false)
@@ -121,7 +123,7 @@ export default function CollectionPage({
           <div
             className={styles.heroBg}
             aria-hidden="true"
-            style={{ backgroundImage: `url('${bgUrl}')` }}
+            style={{ backgroundImage: `url('${bgUrl}')`, ...(heroBgPos ? { backgroundPosition: heroBgPos } : {}) }}
           />
         )}
         <div className={styles.heroContent}>
