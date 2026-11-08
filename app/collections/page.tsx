@@ -101,7 +101,9 @@ export default function Collections() {
       alignItems: 'center',
       justifyContent: 'center',
       padding: '80px 24px',
-    }}>
+    }} className="collMain">
+      {/* Phones: more room above the logo so it is never cropped after the bounce */}
+      <style>{`@media (max-width: 860px){.collMain{padding-top:120px !important}}`}</style>
       {/* Logo */}
       <Link href="/collections" style={{ marginBottom: '40px', opacity: 0.9, display: 'block' }}>
         <img
