@@ -41,7 +41,7 @@ export default function EditPage() {
         <Link href="/collections" aria-label="Collections"><img src={LOGO} alt="Cody Burridge" style={{ height: '32px', width: 'auto', display: 'block' }} /></Link>
       </header>
 
-      <main style={{ maxWidth: '1240px', margin: '0 auto', padding: '56px 24px 96px' }}>
+      <main style={{ maxWidth: '1240px', margin: '0 auto', padding: '96px 24px 96px' }}>
         <h1 style={{
           fontFamily: "'Jost', sans-serif", fontWeight: 700, textTransform: 'uppercase',
           fontSize: 'clamp(40px, 7vw, 88px)', letterSpacing: '-0.02em', lineHeight: 0.95, marginBottom: '56px',
