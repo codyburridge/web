@@ -197,7 +197,7 @@ export default function Collections() {
                 color: '#ffffff',
                 marginBottom: '6px',
               }}>
-                C STUDiO
+                C.STUDiO
               </p>
               <p style={{
                 fontSize: '11px',
