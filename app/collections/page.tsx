@@ -109,7 +109,7 @@ export default function Collections() {
         <img
           src="https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=400"
           alt="Cody Burridge C.STUDIO"
-          style={{ height: '42px', width: 'auto', filter: 'invert(1)', display: 'block' }}
+          style={{ height: '50px', width: 'auto', filter: 'invert(1)', display: 'block' }}
         />
       </Link>
 
