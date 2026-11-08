@@ -18,10 +18,11 @@ const FOOTER_LINKS = [
   { label: 'Exhibition', href: '/exhibition' },
   { label: 'About', href: '/bio' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Edit', href: '/edit' },
+  { label: 'Instagram', href: 'https://www.instagram.com/codyburridgephoto', external: true },
+  { label: 'Shop', href: 'https://shop.codyburridge.com', external: true },
   { label: 'Terms', href: '/terms' },
   { label: 'Privacy', href: '/privacy' },
-  { label: 'Instagram', href: 'https://www.instagram.com/codyburridgestudio', external: true },
-  { label: 'Shop', href: 'https://shop.codyburridge.com', external: true },
 ]
 
 const s = {
