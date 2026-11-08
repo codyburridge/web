@@ -56,7 +56,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
-          href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;700&family=Poppins:wght@300;400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;700&family=Poppins:wght@300;400&display=swap"
           rel="stylesheet"
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(PERSON) }} />
