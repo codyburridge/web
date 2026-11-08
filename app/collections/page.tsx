@@ -14,7 +14,7 @@ const collections = [
   {
     slug: 'a-different-view',
     title: 'A Different View',
-    year: '2023 – Ongoing',
+    year: '2013, Ongoing',
     pieces: 6,
     description: 'Studies of colour, shape and light in the everyday.',
   },
@@ -70,8 +70,8 @@ const collections = [
   {
     slug: 'book',
     title: 'A Different View: The Book',
-    year: 'Ongoing',
-    pieces: 8,
+    year: 'Volume One',
+    pieces: 0,
     description: 'An early selection from A Different View, where shifts in angle, focus and light transform the everyday into abstraction. Collector Edition, limited run, signed and numbered.',
   },
 ]
@@ -164,9 +164,9 @@ export default function Collections() {
                 </p>
               </div>
               <div style={{ textAlign: 'right', flexShrink: 0 }}>
-                <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
+                {col.pieces > 0 && <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase' }}>
                   {col.pieces} pieces
-                </p>
+                </p>}
                 <p style={{ fontSize: '9px', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.4)', marginTop: '4px' }}>
                   {col.year}
                 </p>
