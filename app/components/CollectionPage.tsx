@@ -203,11 +203,11 @@ export default function CollectionPage({
           <Link href="/exhibition">Exhibition</Link>
           <Link href="/bio">About</Link>
           <Link href="/contact">Contact</Link>
+          <Link href="/edit">Edit</Link>
+          <a href="https://www.instagram.com/codyburridgephoto" target="_blank" rel="noopener">Instagram</a>
+          <a href="https://shop.codyburridge.com" target="_blank" rel="noopener">Shop</a>
           <Link href="/terms">Terms</Link>
           <Link href="/privacy">Privacy</Link>
-          <a href="https://www.instagram.com/codyburridgestudio" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://shop.codyburridge.com" target="_blank" rel="noopener">Shop</a>
-          <Link href="/edit">Edit</Link>
         </div>
         <StarLink />
         <p style={{ fontSize: '9px', color: 'rgba(0,0,0,0.2)', letterSpacing: '0.06em' }}>
