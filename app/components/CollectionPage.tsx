@@ -205,6 +205,7 @@ export default function CollectionPage({
           <Link href="/privacy">Privacy</Link>
           <a href="https://www.instagram.com/codyburridgestudio" target="_blank" rel="noopener">Instagram</a>
           <a href="https://shop.codyburridge.com" target="_blank" rel="noopener">Shop</a>
+          <Link href="/edit">Edit</Link>
         </div>
         <StarLink />
         <p style={{ fontSize: '9px', color: 'rgba(0,0,0,0.2)', letterSpacing: '0.06em' }}>
