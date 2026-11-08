@@ -41,7 +41,7 @@
   transform: translateX(-50%);
   line-height: 0;
 }
-.headerLogo img { height: 32px; width: auto; }
+.headerLogo img { height: 38px; width: auto; }
 .shopBtn {
   color: #111111;
   text-decoration: none;
@@ -74,8 +74,8 @@
   text-decoration: none;
   font-family: 'Jost', sans-serif;
   font-size: 26px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
   text-transform: uppercase;
   transition: opacity 0.2s;
 }
