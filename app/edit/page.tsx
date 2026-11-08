@@ -9,6 +9,8 @@ import { imgUrl } from '../img'
 const LOGO = 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/site-36ccec98-077c-482e-9a8e-cf3d20fa0f61-cody-burridge-logo-1000-small.png?v=1793961746&width=400'
 
 const ROWS: { f: string; ar: number }[][] = [
+  [{ f: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/cody-burridge-the-traitors-celebrity-cast-chapel.jpg?v=1794131935&width=1500', ar: 1.778 }],
+  [{ f: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/cody-burridge-the-traitors-celebrity-cast-curtain.jpg?v=1794131940&width=1500', ar: 1.826 }],
   [{ f: '8feced84-7945-4714-9a2b-788ddae5317b/BBC-OOH-Traitors_FINRetouch_48_Green_Logo+2500+pix.jpg', ar: 2.0 }],
   [{ f: '1738857810815-4VU5QV28H7PRXGK21IUM/LUCID_DREAMS_ROCKINGHORSE_CMYK.jpg', ar: 1.554 }],
   [{ f: 'b379213e-33a1-45be-99cc-c2cb8b9b30c3/Traitors+S4+Group+16-9_V12+2500+pix.jpg', ar: 1.775 }],
