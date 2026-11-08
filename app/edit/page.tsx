@@ -40,7 +40,7 @@ export default function EditPage() {
         display: 'flex', alignItems: 'center', justifyContent: 'center',
         background: 'rgba(255,255,255,0.96)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)',
       }}>
-        <Link href="/collections" aria-label="Collections"><img src={LOGO} alt="Cody Burridge" style={{ height: '32px', width: 'auto', display: 'block' }} /></Link>
+        <Link href="/collections" aria-label="Collections"><img src={LOGO} alt="Cody Burridge" style={{ height: '38px', width: 'auto', display: 'block' }} /></Link>
       </header>
 
       <main style={{ maxWidth: '1240px', margin: '0 auto', padding: '96px 24px 96px' }}>
