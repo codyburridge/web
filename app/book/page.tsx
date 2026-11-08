@@ -19,6 +19,7 @@ export default function Book() {
       pieces={8}
       description="An early selection from A Different View, where shifts in angle, focus and light transform the everyday into abstraction. Collector Edition, limited run, signed and numbered."
       artworks={artworks}
+      heroBgPos="left center"
       heroBgFile="6024c81a-6df1-48f7-8fbd-e72f800b19b6/Front+copy+A+Different+View.jpg"
     />
   )
