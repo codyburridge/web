@@ -310,6 +310,8 @@
   margin-top: 4px;
 }
 .signupForm button:hover { opacity: 0.75; }
+.signupThanks { font-family: 'Jost', sans-serif; font-size: 18px; color: #111111; max-width: 420px; margin: 0 auto 16px; line-height: 1.5; }
+.signupError { font-size: 12px; color: #b3261e; margin-top: 4px; }
 .signupNote {
   margin-top: 16px;
   font-size: 9px;
