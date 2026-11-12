@@ -39,6 +39,25 @@ export default function CollectionPage({
   const [navOpen, setNavOpen] = useState(false)
   const [signup, setSignup] = useState<'idle' | 'sending' | 'done' | 'error'>('idle')
   const [signupMsg, setSignupMsg] = useState('')
+  const [showBar, setShowBar] = useState(false)
+
+  // Small preview list bar: only for people who have stayed 30 seconds, once per visit, never over the form itself
+  useEffect(() => {
+    let closed = false
+    try { closed = sessionStorage.getItem('pl_bar') === '1' } catch {}
+    if (closed) return
+    const t = setTimeout(() => {
+      const form = document.getElementById('signup')
+      const r = form?.getBoundingClientRect()
+      if (r && r.top < window.innerHeight && r.bottom > 0) return
+      setShowBar(true)
+    }, 30000)
+    return () => clearTimeout(t)
+  }, [])
+  const closeBar = () => {
+    setShowBar(false)
+    try { sessionStorage.setItem('pl_bar', '1') } catch {}
+  }
   const [scrolled, setScrolled] = useState(false)
   const [lightbox, setLightbox] = useState<{ art: Artwork; view: 'art' | 'insitu' } | null>(null)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
@@ -219,6 +238,25 @@ export default function CollectionPage({
         )}
         <p className={styles.signupNote}>No spam. Unsubscribe at any time.</p>
       </section>
+
+      {showBar && signup !== 'done' && (
+        <div className={styles.listBar} role="dialog" aria-label="Join the preview list">
+          <a
+            className={styles.listBarJoin}
+            href="#signup"
+            onClick={(e) => {
+              e.preventDefault()
+              document.getElementById('signup')?.scrollIntoView({ behavior: 'smooth', block: 'center' })
+              ;(window as any).clarity?.('event', 'preview_bar_click')
+              closeBar()
+            }}
+          >
+            <span className={styles.listBarText}>Join the preview list</span>
+            <span className={styles.listBarSub}>First look at new works</span>
+          </a>
+          <button className={styles.listBarClose} onClick={closeBar} aria-label="Close">×</button>
+        </div>
+      )}
 
       <footer className={styles.footer}>
         <Link className={styles.footerLogo} href="/collections">
