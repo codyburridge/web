@@ -7,6 +7,7 @@ const to = (destination, sources) => sources.map(source => ({ source, destinatio
 const nextConfig = {
   async redirects() {
     return [
+      { source: '/favicon.ico', destination: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/cody-burridge-cb-icon-32.png?v=1794484512', permanent: false },
       ...to('/the-convention', ['/convention', '/comic-con-new', '/cc-about', '/details-cc', '/cs:n(\\d+)', '/cs:n(\\d+)-:m(\\d+)',
         '/fag-break', '/for-rent', '/no-parking', '/waiting-for-batman', '/i-am-sure-he-said-214', '/no-standing',
         '/stand-pipe', '/i-rest-my-case', '/lost-bunny', '/did-you-hear-something', '/shadow-of-doubt', '/delayed']),
