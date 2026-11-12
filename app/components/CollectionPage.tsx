@@ -37,6 +37,8 @@ export default function CollectionPage({
   titleImage,
 }: CollectionPageProps) {
   const [navOpen, setNavOpen] = useState(false)
+  const [signup, setSignup] = useState<'idle' | 'sending' | 'done' | 'error'>('idle')
+  const [signupMsg, setSignupMsg] = useState('')
   const [scrolled, setScrolled] = useState(false)
   const [lightbox, setLightbox] = useState<{ art: Artwork; view: 'art' | 'insitu' } | null>(null)
   const [loadedImages, setLoadedImages] = useState<Set<number>>(new Set())
@@ -171,15 +173,39 @@ export default function CollectionPage({
         <p className={styles.signupSub}>
           First access to new works, collector editions and releases, before they go public.
         </p>
+        {signup === 'done' ? (
+          <p className={styles.signupThanks} role="status">Thank you, you are on the list. Watch your inbox for first access to new works.</p>
+        ) : (
         <form
           className={styles.signupForm}
           action="https://codyburridge.us1.list-manage.com/subscribe/post?u=de5025904fc1d6605d1c621b1&id=1283185285&f_id=00577fe1f0"
           method="post"
           target="_blank"
           noValidate
-          onSubmit={() => {
-            ;(window as any).fbq?.('track', 'Lead', { content_name: 'Preview list' })
-            ;(window as any).clarity?.('event', 'preview_list_signup')
+          onSubmit={(e) => {
+            // Sign up without leaving the page (Mailchimp's JSONP endpoint), then count the Lead only once Mailchimp says yes
+            e.preventDefault()
+            const f = e.currentTarget
+            const email = (f.elements.namedItem('EMAIL') as HTMLInputElement).value.trim()
+            const fname = (f.elements.namedItem('FNAME') as HTMLInputElement).value.trim()
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setSignup('error'); setSignupMsg('Please enter a valid email address.'); return }
+            setSignup('sending'); setSignupMsg('')
+            const cb = 'mc' + Date.now()
+            const sc = document.createElement('script')
+            const finish = () => { delete (window as any)[cb]; sc.remove() }
+            ;(window as any)[cb] = (r: { result: string; msg: string }) => {
+              finish()
+              if (r.result === 'success' || /already subscribed/i.test(r.msg || '')) {
+                setSignup('done')
+                ;(window as any).fbq?.('track', 'Lead', { content_name: 'Preview list' })
+                ;(window as any).clarity?.('event', 'preview_list_signup')
+              } else {
+                setSignup('error'); setSignupMsg((r.msg || 'Something went wrong, please try again.').replace(/<[^>]+>/g, '').replace(/^\d+ - /, ''))
+              }
+            }
+            sc.onerror = () => { finish(); setSignup('error'); setSignupMsg('Something went wrong, please try again.') }
+            sc.src = 'https://codyburridge.us1.list-manage.com/subscribe/post-json?u=de5025904fc1d6605d1c621b1&id=1283185285&f_id=00577fe1f0&c=' + cb + '&EMAIL=' + encodeURIComponent(email) + '&FNAME=' + encodeURIComponent(fname) + '&b_de5025904fc1d6605d1c621b1_1283185285='
+            document.body.appendChild(sc)
           }}
         >
           <input type="text" name="FNAME" placeholder="First name" autoComplete="given-name" />
@@ -187,8 +213,10 @@ export default function CollectionPage({
           <div style={{ position: 'absolute', left: '-5000px' }} aria-hidden="true">
             <input type="text" name="b_de5025904fc1d6605d1c621b1_1283185285" tabIndex={-1} defaultValue="" />
           </div>
-          <button type="submit">Join the List</button>
+          <button type="submit" disabled={signup === 'sending'}>{signup === 'sending' ? 'Joining…' : 'Join the List'}</button>
+          {signup === 'error' && <p className={styles.signupError} role="alert">{signupMsg}</p>}
         </form>
+        )}
         <p className={styles.signupNote}>No spam. Unsubscribe at any time.</p>
       </section>
 
