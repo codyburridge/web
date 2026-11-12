@@ -7,7 +7,7 @@ const to = (destination, sources) => sources.map(source => ({ source, destinatio
 const nextConfig = {
   async redirects() {
     return [
-      ...to('/the-convention', ['/convention', '/cc-about', '/details-cc', '/cs:n(\\d+)', '/cs:n(\\d+)-:m(\\d+)',
+      ...to('/the-convention', ['/convention', '/comic-con-new', '/cc-about', '/details-cc', '/cs:n(\\d+)', '/cs:n(\\d+)-:m(\\d+)',
         '/fag-break', '/for-rent', '/no-parking', '/waiting-for-batman', '/i-am-sure-he-said-214', '/no-standing',
         '/stand-pipe', '/i-rest-my-case', '/lost-bunny', '/did-you-hear-something', '/shadow-of-doubt', '/delayed']),
       ...to('/a-different-view', ['/a-different-view-new', '/different-view-about', '/details-diff', '/db:n(\\d+)', '/db:n(\\d+)-:m(\\d+)']),
