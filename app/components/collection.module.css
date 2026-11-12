@@ -441,3 +441,29 @@
   .lightboxThumb { height: 72px; }
   .lightboxClose { position: fixed; top: 10px; right: 12px; z-index: 5; background: #fff; border-radius: 50%; width: 36px; height: 36px; opacity: 0.8; }
 }
+
+/* Phones: a shorter opening screen so the first work is already in view under the title */
+@media (max-width: 700px) {
+  .hero { min-height: 0; padding: 104px 24px 44px; }
+  .hero h1 { margin-bottom: 18px; }
+  .scrollHint { display: none; }
+  .gallerySection { padding-top: 28px; }
+}
+
+/* Preview list bar: slides up after 30 seconds, taps through to the form at the bottom */
+.listBar {
+  position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 150;
+  display: flex; align-items: center; gap: 8px;
+  background: #111111; color: #ffffff; border-radius: 2px;
+  padding: 12px 8px 12px 18px; box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+  animation: listBarIn 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+@keyframes listBarIn { from { transform: translateY(120%); opacity: 0; } to { transform: none; opacity: 1; } }
+.listBarJoin { flex: 1; display: flex; flex-direction: column; gap: 2px; color: #ffffff; text-decoration: none; }
+.listBarText { font-family: 'Jost', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: -0.01em; text-transform: uppercase; }
+.listBarSub { font-size: 11px; color: rgba(255,255,255,0.6); letter-spacing: 0.04em; }
+.listBarClose { background: none; border: 0; color: rgba(255,255,255,0.7); font-size: 24px; line-height: 1; padding: 6px 10px; cursor: pointer; }
+@media (min-width: 701px) {
+  .listBar { left: auto; right: 24px; bottom: 24px; width: 340px; }
+}
