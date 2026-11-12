@@ -12,6 +12,14 @@ export const metadata: Metadata = {
   title: { default: 'Cody Burridge | C STUDiO', template: '%s | Cody Burridge' },
   description: DESCRIPTION,
   applicationName: SITE_NAME,
+  // The CB icon from the old Squarespace site
+  icons: {
+    icon: [
+      { url: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/cody-burridge-cb-icon-32.png?v=1794484512', sizes: '32x32', type: 'image/png' },
+      { url: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/cody-burridge-cb-icon-192.png?v=1794484522', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [{ url: 'https://cdn.shopify.com/s/files/1/1093/5432/0212/files/cody-burridge-cb-icon-180.png?v=1794484517', sizes: '180x180' }],
+  },
   authors: [{ name: 'Cody Burridge' }],
   keywords: ['Cody Burridge', 'C STUDiO', 'fine art photography', 'British photographer', 'limited edition prints', 'The Convention', 'comic con photography', 'A Different View', 'The Magic Hour', 'Psychedelic Trellick', 'art prints London'],
   alternates: { canonical: '/' },
