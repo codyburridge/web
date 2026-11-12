@@ -444,10 +444,11 @@
 
 /* Phones: a shorter opening screen so the first work is already in view under the title */
 @media (max-width: 700px) {
-  .hero { min-height: 0; padding: 104px 24px 44px; }
-  .hero h1 { margin-bottom: 18px; }
+  .hero { min-height: 0; padding: 100px 24px 30px; }
+  .hero h1 { margin-bottom: 16px; }
   .scrollHint { display: none; }
-  .gallerySection { padding-top: 28px; }
+  .gallerySection { padding-top: 22px; }
+  .galleryHeader { padding: 0 24px 18px; }
 }
 
 /* Preview list bar: slides up after 30 seconds, taps through to the form at the bottom */
