@@ -174,11 +174,12 @@ export default function CollectionPage({
               <img
                 src={imgUrl(art.file, 800)}
                 alt={`${art.title}, from ${title} by Cody Burridge, fine art photograph`}
-                loading="lazy"
+                loading={i < 2 ? 'eager' : 'lazy'}
                 decoding="async"
                 className={loadedImages.has(i) ? styles.imgLoaded : ''}
                 style={art.objPos ? { objectPosition: art.objPos } : undefined}
                 onLoad={() => handleImageLoad(i)}
+                ref={(el) => { if (el && el.complete && el.naturalWidth > 0 && !loadedImages.has(i)) handleImageLoad(i) }}
               />
               {art.title && <div className={styles.galleryCaption}>{art.title}</div>}
             </div>
