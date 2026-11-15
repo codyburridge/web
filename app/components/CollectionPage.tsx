@@ -100,7 +100,8 @@ export default function CollectionPage({
     `/contact?collection=${encodeURIComponent(title)}&artwork=${encodeURIComponent(art.title)}`
 
   const bgFile = heroBgFile ?? artworks[0]?.file
-  const bgUrl = bgFile ? imgUrl(bgFile, 1200) : ''
+  // The hero picture is shown faded at 18%, so a small file looks the same and leaves the bandwidth for the first works
+  const bgUrl = bgFile ? imgUrl(bgFile, 700) : ''
 
   const titleWords = title.split(' ')
   const titleDisplay = titleWords.length >= 3
@@ -175,6 +176,7 @@ export default function CollectionPage({
                 src={imgUrl(art.file, 800)}
                 alt={`${art.title}, from ${title} by Cody Burridge, fine art photograph`}
                 loading={i < 2 ? 'eager' : 'lazy'}
+                {...(i === 0 ? { fetchpriority: 'high' } : {})}
                 decoding="async"
                 className={loadedImages.has(i) ? styles.imgLoaded : ''}
                 style={art.objPos ? { objectPosition: art.objPos } : undefined}
