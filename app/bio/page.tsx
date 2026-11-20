@@ -43,7 +43,7 @@ const s = {
   eyebrow: { fontSize: '9px', letterSpacing: '0.22em', textTransform: 'uppercase' as const, color: 'rgba(255,255,255,0.3)', marginBottom: '20px', display: 'block' as const },
   body: { fontSize: '15px', lineHeight: 1.75, color: 'rgba(255,255,255,0.75)', fontWeight: 300 as const },
   bio: { fontSize: '14px', lineHeight: 1.85, color: 'rgba(255,255,255,0.6)', fontWeight: 300 as const, marginBottom: '22px' },
-  footer: { background: '#0a0a0a', borderTop: '1px solid rgba(255,255,255,0.07)', padding: '48px 24px', display: 'flex' as const, flexDirection: 'column' as const, alignItems: 'center' as const, gap: '24px' },
+  footer: { background: '#111111', borderTop: '1px solid rgba(255,255,255,0.07)', padding: '48px 24px', display: 'flex' as const, flexDirection: 'column' as const, alignItems: 'center' as const, gap: '24px' },
   footerLink: { color: 'rgba(255,255,255,0.25)', fontSize: '9px', letterSpacing: '0.12em', textTransform: 'uppercase' as const, textDecoration: 'none' },
 }
 
@@ -56,12 +56,13 @@ export default function BioPage() {
   }, [])
 
   return (
-    <div style={{ minHeight: '100vh', background: '#0a0a0a', color: '#fff', fontFamily: "'Poppins', system-ui, sans-serif", WebkitFontSmoothing: 'antialiased' }}>
+    <div style={{ minHeight: '100vh', background: '#111111', color: '#fff', fontFamily: "'Poppins', system-ui, sans-serif", WebkitFontSmoothing: 'antialiased' }}>
+      <style>{`html, body { background: #111111; }`}</style>
       <header style={{
         position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
         display: 'flex', alignItems: 'center', justifyContent: 'space-between',
         padding: '0 32px', height: '64px',
-        background: scrolled ? 'rgba(10,10,10,0.95)' : 'transparent',
+        background: scrolled ? 'rgba(17,17,17,0.95)' : 'transparent',
         backdropFilter: scrolled ? 'blur(8px)' : 'none',
         borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none',
         transition: 'all 0.3s',
